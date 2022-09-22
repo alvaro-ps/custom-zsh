@@ -1,0 +1,148 @@
+"Automatic installation of vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdTree' "Documents tree
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "Autocompletion 
+Plug 'tpope/vim-fugitive' "git integration
+Plug 'scrooloose/syntastic' "code syntaxis
+Plug 'Raimondi/delimitMate' "automatic closing of quotes, parenthesis...
+Plug 'yggdroot/indentline' "Show indent lines (useful for loops)
+Plug 'altercation/vim-colors-solarized' "Color scheme
+" Plug 'tmhedberg/SimpylFold' "Python folding
+Plug 'pseewald/vim-anyfold' "code folding
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'easymotion/vim-easymotion' "simpler way to use some motions in vim
+Plug 'tmhedberg/matchit' "extension of % for HTM, latex, ...
+Plug 'ctrlpvim/ctrlp.vim'    "Finder for vim
+Plug 'idbrii/vim-notgrep'   "ack in vim
+Plug 'derekwyatt/vim-scala' "Scala
+Plug 'leafgarland/typescript-vim' "Typescript
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'sheerun/vim-polyglot'  "highlighting for some files (Jenkinsfiles)
+Plug 'psf/black', { 'branch': 'stable' }  "python black
+
+
+call plug#end()
+
+let mapleader=" "
+inoremap jj <esc>
+vnoremap jj <esc>
+nnoremap z :bnext<return>
+nnoremap Z :bprevious<return>
+nnoremap <C-z> :bdelete<return>
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+set nu
+set colorcolumn=90
+set backupcopy=yes
+
+""For copying to the clipboard
+noremap <C-c> "+y
+noremap <C-v> "+p
+set clipboard=unnamedplus
+"""For incremental searching and highlighting
+set incsearch
+set hlsearch
+"""For switching to another buffer without saving
+set hidden
+
+"""Do not expandtab for makefiles!
+autocmd FileType make setlocal noexpandtab
+"""Handle tab spacing in python
+augroup python_files
+    autocmd!
+    autocmd FileType python set tabstop=4
+    autocmd FileType python set shiftwidth=4
+augroup END
+
+""""PLUGINS""""
+"""For NERDTree
+nnoremap <C-n> :NERDTreeToggle<return>
+""coc autocompletion
+let g:coc_global_extensions = ['coc-pyright', 'coc-metals', 'coc-sh']
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+" Use K to either doHover or show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" GoTo code navigation.
+nmap <silent> <Leader>d <Plug>(coc-definition)
+nmap <silent> <Leader>r <Plug>(coc-references)
+
+""For syntastic (syntactic checker)
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_python_checkers = ['pylint', 'pep8']
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+nnoremap <silent> <Leader>s :SyntasticToggleMode<return> 
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': []}
+let g:syntastic_python_pep8_args = '--ignore="E111,E114"'
+let g:syntastic_python_pylint_args = '--disable="C0103,W0311"'
+"""For solarized
+syntax enable
+"let g:solarized_termtrans = 1  "Allows transparent terminal
+set background=dark
+colorscheme solarized
+"""Folding
+nnoremap , za
+nnoremap < zA
+
+""""SympylFold
+let g:SimpylFold_docstring_preview = 1  "See the first line of the fold
+let g:SimpylFold_fold_docstring = 0     "Do not fold docstrings (in functions for example
+let g:SimpylFold_fold_import = 0
+""""anyfold
+filetype plugin indent on " required
+syntax on                 " required
+autocmd Filetype * AnyFoldActivate               " activate for all filetypes
+set foldlevel=0  " close all folds
+let g:anyfold_fold_toplevel=0
+let g:anyfold_fold_comments=0
+let g:anyfold_fold_identify_comments=2
+""For airline
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+nnoremap ² :bn<return>
+"""For JSON files (apparently it is already installed)
+let g:vim_json_syntax_conceal = 0
+"""notgrep
+""" grep the contents of the clipboard
+nnoremap <silent> <Leader>f :NotGrep <C-R>"<return>
+nnoremap <Leader>fi :NotGrep -i
+""" For black
+autocmd BufWritePre *.py execute ':Black'
+let g:black_linelength = 100
+""" For Ctrl-P
+let g:ctrlp_show_hidden = 1
