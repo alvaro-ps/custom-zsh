@@ -1,1 +1,1 @@
-brew install shellcheck tree
+brew install shellcheck tree ack
