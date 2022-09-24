@@ -48,7 +48,12 @@ set backupcopy=yes
 ""For copying to the clipboard
 noremap <C-c> "+y
 noremap <C-v> "+p
-set clipboard=unnamedplus
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed
+else 
+  set clipboard=unnamedplus
+endif
+
 """For incremental searching and highlighting
 set incsearch
 set hlsearch
