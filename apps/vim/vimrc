@@ -1,4 +1,3 @@
-"Automatic installation of vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -27,6 +26,10 @@ Plug 'leafgarland/typescript-vim' "Typescript
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'sheerun/vim-polyglot'  "highlighting for some files (Jenkinsfiles)
 Plug 'psf/black', { 'branch': 'stable' }  "python black
+Plug 'yaegassy/coc-cucumber', {'do': 'yarn install --frozen-lockfile'}
+Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+Plug 'godlygeek/tabular'
+Plug 'mfussenegger/nvim-dap'   " Debug Adapter Protocol
 
 
 call plug#end()
@@ -37,6 +40,7 @@ vnoremap jj <esc>
 nnoremap z :bnext<return>
 nnoremap Z :bprevious<return>
 nnoremap <C-z> :bdelete<return>
+nnoremap q <c-v>
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -44,10 +48,11 @@ set autoindent
 set nu
 set colorcolumn=90
 set backupcopy=yes
+set nowrap
 
 ""For copying to the clipboard
-noremap <C-c> "+y
-noremap <C-v> "+p
+"noremap <C-c> "+y
+"noremap <C-v> "+p
 if system('uname -s') == "Darwin\n"
   set clipboard=unnamed
 else 
@@ -73,16 +78,16 @@ augroup END
 """For NERDTree
 nnoremap <C-n> :NERDTreeToggle<return>
 ""coc autocompletion
-let g:coc_global_extensions = ['coc-pyright', 'coc-metals', 'coc-sh']
+let g:coc_global_extensions = ['coc-pyright', 'coc-metals', 'coc-sh', 'coc-java']
 
-function! s:check_back_space() abort
+function! CheckBackSpace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
 inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackSpace() ? "\<Tab>" :
       \ coc#refresh()
 
 " Use K to either doHover or show documentation in preview window
@@ -147,7 +152,26 @@ let g:vim_json_syntax_conceal = 0
 nnoremap <silent> <Leader>f :NotGrep <C-R>"<return>
 nnoremap <Leader>fi :NotGrep -i
 """ For black
-autocmd BufWritePre *.py execute ':Black'
-let g:black_linelength = 100
+"autocmd BufWritePre *.py execute ':Black'
+"let g:black_linelength = 100
 """ For Ctrl-P
 let g:ctrlp_show_hidden = 1
+""" For cucumber
+inoremap <leader>b   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+""" Tabularize
+nnoremap <Leader>t :Tabularize /\|<C-R><return>
+
+"""  vim-scala
+au BufRead,BufNewFile *.sbt set filetype=scala
