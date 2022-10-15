@@ -3,6 +3,7 @@
 local api = vim.api
 local cmd = vim.cmd
 
+
 local function map(mode, lhs, rhs, opts)
   local options = { noremap = true }
   if opts then
@@ -37,6 +38,7 @@ end)
 
 -- global
 vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
+vim.opt_global.shortmess:remove("F")
 
 -- IDE
 map("n", "<leader>d", "<cmd>lua vim.lsp.buf.definition()<CR>")
