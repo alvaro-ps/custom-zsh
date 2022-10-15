@@ -27,7 +27,6 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'sheerun/vim-polyglot'  "highlighting for some files (Jenkinsfiles)
 Plug 'psf/black', { 'branch': 'stable' }  "python black
 Plug 'yaegassy/coc-cucumber', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 Plug 'godlygeek/tabular'
 
 
@@ -77,7 +76,7 @@ augroup END
 """For NERDTree
 nnoremap <C-n> :NERDTreeToggle<return>
 ""coc autocompletion
-let g:coc_global_extensions = ['coc-pyright', 'coc-sh', 'coc-java']  "'coc-metals'
+let g:coc_global_extensions = ['coc-pyright', 'coc-sh']
 
 function! CheckBackSpace() abort
   let col = col('.') - 1
@@ -173,4 +172,4 @@ endfunction
 nnoremap <Leader>t :Tabularize /\|<C-R><return>
 
 """  vim-scala
-au BufRead,BufNewFile *.sbt set filetype=scala
+"au BufRead,BufNewFile *.sbt set filetype=scala
