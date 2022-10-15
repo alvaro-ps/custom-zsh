@@ -27,9 +27,8 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'sheerun/vim-polyglot'  "highlighting for some files (Jenkinsfiles)
 Plug 'psf/black', { 'branch': 'stable' }  "python black
 Plug 'yaegassy/coc-cucumber', {'do': 'yarn install --frozen-lockfile'}
-Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 Plug 'godlygeek/tabular'
-Plug 'mfussenegger/nvim-dap'   " Debug Adapter Protocol
 
 
 call plug#end()
@@ -78,7 +77,7 @@ augroup END
 """For NERDTree
 nnoremap <C-n> :NERDTreeToggle<return>
 ""coc autocompletion
-let g:coc_global_extensions = ['coc-pyright', 'coc-metals', 'coc-sh', 'coc-java']
+let g:coc_global_extensions = ['coc-pyright', 'coc-sh', 'coc-java']  "'coc-metals'
 
 function! CheckBackSpace() abort
   let col = col('.') - 1
