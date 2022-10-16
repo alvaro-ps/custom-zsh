@@ -53,7 +53,12 @@ require("packer").startup(function(use)
     "romgrk/barbar.nvim",
     requires = "kyazdani42/nvim-web-devicons"
   })
-  use({"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}})
+  use({
+    "rcarriga/nvim-dap-ui",   -- Debugger UI
+    requires = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/cmp-dap",
+  }})
   use({"nvim-treesitter/nvim-treesitter"})
   use({ -- File Tree
     "nvim-tree/nvim-tree.lua",
