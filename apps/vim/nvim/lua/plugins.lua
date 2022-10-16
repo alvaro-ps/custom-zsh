@@ -4,8 +4,6 @@ vim.cmd([[
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   augroup END
 ]])
---vim.cmd [[source $HOME/.config/nvim/vimscript/packer_compiled.vim]]
---
 
 -- Only required if you have packer configured as `opt`
 local api = vim.api
@@ -52,8 +50,7 @@ require("packer").startup(function(use)
   }
   use({"overcache/NeoSolarized"})  -- theme
   use({  -- Bufferbar
-    "akinsho/bufferline.nvim",
-    tag = "v2.*",
+    "romgrk/barbar.nvim",
     requires = "kyazdani42/nvim-web-devicons"
   })
   use({"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}})

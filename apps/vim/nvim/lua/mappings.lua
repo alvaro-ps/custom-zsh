@@ -30,3 +30,7 @@ map("n", "fg", [[<cmd>lua require("telescope.builtin").git_commits()<CR>]])
 
 -- Tree
 map("n", "<leader>n", [[<cmd>lua require("nvim-tree.api").tree.toggle()<CR>]])
+
+-- Buffer
+map('n', 'Z', '<Cmd>BufferPrevious<CR>', opts)
+map('n', 'z', '<Cmd>BufferNext<CR>', opts)
