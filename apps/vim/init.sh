@@ -3,6 +3,10 @@ basepath=$(cd $(dirname "$0") && pwd)
 ln -f "${basepath}/vimrc" ~/.vimrc
 ln -f "${basepath}/coc-settings.json" ~/.vim/coc-settings.json
 
+# git ignore global
+ln -f "${basepath}/gitignore_global" ~/.gitignore_global
+# git config --global core.excludesFile ~/.gitignore_global
+
 # SBT
 mkdir -p "${HOME}/.sbt/1.0/plugins"
 ln -f "${basepath}/nvim/plugins.sbt" "${HOME}/.sbt/1.0/plugins/plugins.sbt"
