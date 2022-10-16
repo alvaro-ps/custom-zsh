@@ -7,12 +7,10 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdTree' "Documents tree
-Plug 'neoclide/coc.nvim', {'branch': 'release'} "Autocompletion 
 Plug 'tpope/vim-fugitive' "git integration
 Plug 'scrooloose/syntastic' "code syntaxis
 Plug 'Raimondi/delimitMate' "automatic closing of quotes, parenthesis...
 Plug 'yggdroot/indentline' "Show indent lines (useful for loops)
-" Plug 'tmhedberg/SimpylFold' "Python folding
 Plug 'pseewald/vim-anyfold' "code folding
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -24,7 +22,6 @@ Plug 'leafgarland/typescript-vim' "Typescript
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'sheerun/vim-polyglot'  "highlighting for some files (Jenkinsfiles)
 Plug 'psf/black', { 'branch': 'stable' }  "python black
-Plug 'yaegassy/coc-cucumber', {'do': 'yarn install --frozen-lockfile'}
 Plug 'godlygeek/tabular'
 
 
@@ -73,33 +70,6 @@ augroup END
 """"PLUGINS""""
 """For NERDTree
 nnoremap <C-n> :NERDTreeToggle<return>
-""coc autocompletion
-let g:coc_global_extensions = ['coc-sh'] "'coc-pyright',
-
-function! CheckBackSpace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackSpace() ? "\<Tab>" :
-      \ coc#refresh()
-
-" Use K to either doHover or show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" GoTo code navigation.
-nmap <silent> <Leader>d <Plug>(coc-definition)
-nmap <silent> <Leader>r <Plug>(coc-references)
 
 ""For syntastic (syntactic checker)
 set statusline+=%#warningmsg#

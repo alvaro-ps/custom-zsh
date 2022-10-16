@@ -15,6 +15,8 @@ function M.setup()
     sources = {
       { name = "nvim_lsp" },
       { name = "vsnip" },
+      { name = "treesitter"},
+      { name = "buffer" },
     },
     snippet = {
       expand = function(args)
@@ -43,6 +45,7 @@ function M.setup()
           feedkey("<Plug>(vsnip-jump-prev)", "")
         end
       end, { "i", "s" }),
+
     }),
   })
 end

@@ -31,6 +31,7 @@ require("packer").startup(function(use)
       { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-vsnip" },
       { "hrsh7th/vim-vsnip" },
+      { "hrsh7th/cmp-buffer" },
     },
   })
   use({ -- scala
@@ -56,6 +57,7 @@ require("packer").startup(function(use)
     requires = "kyazdani42/nvim-web-devicons"
   })
   use({"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}})
+  use({"nvim-treesitter/nvim-treesitter"})
 
 
 
@@ -75,3 +77,4 @@ require("setup/telescope").setup()
 require("setup/solarized").setup()
 require("setup/bufferbar").setup()
 require("setup/debugger").setup()
+require("setup/treesitter").setup()
