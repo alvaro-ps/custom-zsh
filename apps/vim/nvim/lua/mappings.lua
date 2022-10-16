@@ -24,4 +24,5 @@ map("n", "<leader>rt", [[<cmd>lua require"dap".repl.toggle()<CR>]])
 
 -- Telescope
 map("n", "ff", [[<cmd>lua require("setup.telescope").smart_find_files()<CR>]])
-map("n", "fg", [[<cmd>lua require("telescope.builtin").live_grep()<CR>]])
+map("n", "ft", [[<cmd>lua require("telescope.builtin").live_grep()<CR>]])
+map("n", "fg", [[<cmd>lua require("telescope.builtin").git_commits()<CR>]])

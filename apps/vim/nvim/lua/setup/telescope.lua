@@ -5,6 +5,10 @@ function M.setup()
   telescope.setup({
     defaults = {
       path_display = {"smart"},
+      layout_config = {
+        vertical = { width = 0.5 },
+        horizontal = { height = 0.5 },
+      }
     }
   })
 end
