@@ -6,7 +6,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdTree' "Documents tree
 Plug 'tpope/vim-fugitive' "git integration
 Plug 'scrooloose/syntastic' "code syntaxis
 Plug 'Raimondi/delimitMate' "automatic closing of quotes, parenthesis...
@@ -68,8 +67,6 @@ augroup python_files
 augroup END
 
 """"PLUGINS""""
-"""For NERDTree
-nnoremap <C-n> :NERDTreeToggle<return>
 
 ""For syntastic (syntactic checker)
 set statusline+=%#warningmsg#
