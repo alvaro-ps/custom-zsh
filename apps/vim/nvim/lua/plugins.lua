@@ -22,10 +22,10 @@ end
 
 cmd [[packadd packer.nvim]]
 
-require('packer').startup(function(use)
+require("packer").startup(function(use)
   use({ "wbthomason/packer.nvim", opt = true })
 
-  use({
+  use({  -- completion
     "hrsh7th/nvim-cmp",
     requires = {
       { "hrsh7th/cmp-nvim-lsp" },
@@ -33,23 +33,30 @@ require('packer').startup(function(use)
       { "hrsh7th/vim-vsnip" },
     },
   })
-  use({
+  use({ -- scala
     "scalameta/nvim-metals",
     requires = {
       "nvim-lua/plenary.nvim",
       "mfussenegger/nvim-dap",
     },
   })
-  use({'kevinhwang91/nvim-bqf'})
-  use({'neovim/nvim-lspconfig'})
-  use {
-    'nvim-telescope/telescope.nvim', branch = '0.1.x',
+  use({"kevinhwang91/nvim-bqf"})
+  use({"neovim/nvim-lspconfig"})
+  use { -- file and text finder
+    "nvim-telescope/telescope.nvim", branch = "0.1.x",
     requires = {
-      'nvim-lua/plenary.nvim',
-      'BurntSushi/ripgrep',
+      "nvim-lua/plenary.nvim",
+      "BurntSushi/ripgrep",
     }
   }
   use({"overcache/NeoSolarized"})  -- theme
+  use({  -- Bufferbar
+    "akinsho/bufferline.nvim",
+    tag = "v2.*",
+    requires = "kyazdani42/nvim-web-devicons"
+  })
+  use({"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}})
+
 
 
 end)
@@ -61,9 +68,10 @@ vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
 -- completion related settings
 -- This is similiar to what I use
 
-require('setup/completion').setup()
-require('setup/scala').setup()
-require('setup/python').setup()
-require('setup/telescope').setup()
-require('setup/solarized').setup()
---require('setup/debugger').setup()
+require("setup/completion").setup()
+require("setup/scala").setup()
+require("setup/python").setup()
+require("setup/telescope").setup()
+require("setup/solarized").setup()
+require("setup/bufferbar").setup()
+require("setup/debugger").setup()
