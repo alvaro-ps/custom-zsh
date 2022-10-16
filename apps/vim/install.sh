@@ -1,1 +1,1 @@
-brew install vim node
+brew install vim node ripgrep
