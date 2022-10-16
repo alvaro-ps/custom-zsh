@@ -19,7 +19,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion' "simpler way to use some motions in vim
 Plug 'tmhedberg/matchit' "extension of % for HTM, latex, ...
-Plug 'ctrlpvim/ctrlp.vim'    "Finder for vim
 Plug 'idbrii/vim-notgrep'   "ack in vim
 Plug 'derekwyatt/vim-scala' "Scala
 Plug 'leafgarland/typescript-vim' "Typescript
@@ -152,8 +151,6 @@ nnoremap <Leader>fi :NotGrep -i
 """ For black
 "autocmd BufWritePre *.py execute ':Black'
 "let g:black_linelength = 100
-""" For Ctrl-P
-let g:ctrlp_show_hidden = 1
 """ For cucumber
 inoremap <leader>b   <Bar><Esc>:call <SID>align()<CR>a
 
