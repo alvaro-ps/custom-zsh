@@ -11,14 +11,11 @@ Plug 'scrooloose/syntastic' "code syntaxis
 Plug 'Raimondi/delimitMate' "automatic closing of quotes, parenthesis...
 Plug 'yggdroot/indentline' "Show indent lines (useful for loops)
 Plug 'pseewald/vim-anyfold' "code folding
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion' "simpler way to use some motions in vim
 Plug 'tmhedberg/matchit' "extension of % for HTM, latex, ...
 Plug 'idbrii/vim-notgrep'   "ack in vim
-Plug 'derekwyatt/vim-scala' "Scala
-Plug 'leafgarland/typescript-vim' "Typescript
-Plug 'peitalin/vim-jsx-typescript'
 Plug 'sheerun/vim-polyglot'  "highlighting for some files (Jenkinsfiles)
 Plug 'psf/black', { 'branch': 'stable' }  "python black
 Plug 'godlygeek/tabular'
@@ -100,8 +97,8 @@ let g:anyfold_fold_toplevel=0
 let g:anyfold_fold_comments=0
 let g:anyfold_fold_identify_comments=2
 ""For airline
-set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
+"set laststatus=2
+"let g:airline#extensions#tabline#enabled = 1
 nnoremap ² :bn<return>
 """For JSON files (apparently it is already installed)
 let g:vim_json_syntax_conceal = 0
@@ -128,6 +125,3 @@ endfunction
 
 """ Tabularize
 nnoremap <Leader>t :Tabularize /\|<CR><return>
-
-"""  vim-scala
-"au BufRead,BufNewFile *.sbt set filetype=scala

@@ -16,11 +16,11 @@ map("n", "<leader>r", "<cmd>lua vim.lsp.buf.references()<CR>")
 map("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 
 -- Debugging
-map("n", "<leader>b", [[<cmd>lua require"dap".toggle_breakpoint()<CR>]])
-map("n", "<leader>n", [[<cmd>lua require"dap".step_over()<CR>]])
-map("n", "<leader>i", [[<cmd>lua require"dap".step_over()<CR>]])
-map("n", "<leader>c", [[<cmd>lua require"dap".continue()<CR>]])
-map("n", "<leader>rt", [[<cmd>lua require"dap".repl.toggle()<CR>]])
+map("n", "<leader>b", [[<cmd>lua require("dap").toggle_breakpoint()<CR>]])
+map("n", "<leader>n", [[<cmd>lua require("dap").step_over()<CR>]])
+map("n", "<leader>i", [[<cmd>lua require("dap").step_into()<CR>]])
+map("n", "<leader>c", [[<cmd>lua require("dap").continue()<CR>]])
+map("n", "<leader>g", [[<cmd>lua require("dapui").toggle()<CR>]])
 
 -- Telescope
 map("n", "ff", [[<cmd>lua require("setup.telescope").smart_find_files()<CR>]])
@@ -29,7 +29,7 @@ map("n", "fg", [[<cmd>lua require("telescope.builtin").git_commits()<CR>]])
 
 
 -- Tree
-map("n", "<leader>n", [[<cmd>lua require("nvim-tree.api").tree.toggle()<CR>]])
+map("n", "<C-n>", [[<cmd>lua require("nvim-tree.api").tree.toggle()<CR>]])
 
 -- Buffer
 map('n', 'Z', '<Cmd>BufferPrevious<CR>', opts)

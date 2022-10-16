@@ -55,12 +55,16 @@ require("packer").startup(function(use)
   })
   use({"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}})
   use({"nvim-treesitter/nvim-treesitter"})
-  use {
+  use({ -- File Tree
     "nvim-tree/nvim-tree.lua",
     requires = {
       "nvim-tree/nvim-web-devicons", -- optional, for file icons
     },
-  }
+  })
+  use({ -- Status Line
+    "nvim-lualine/lualine.nvim",
+    requires = { "kyazdani42/nvim-web-devicons"}
+  })
 
 
 
@@ -82,3 +86,4 @@ require("setup/bufferbar").setup()
 require("setup/debugger").setup()
 require("setup/treesitter").setup()
 require("setup/tree").setup()
+require("setup/statusline").setup()
