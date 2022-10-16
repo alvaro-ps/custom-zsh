@@ -130,7 +130,7 @@ function! s:align()
 endfunction
 
 """ Tabularize
-nnoremap <Leader>t :Tabularize /\|<C-R><return>
+nnoremap <Leader>t :Tabularize /\|<CR><return>
 
 """  vim-scala
 "au BufRead,BufNewFile *.sbt set filetype=scala
