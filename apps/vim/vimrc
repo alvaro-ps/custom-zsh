@@ -12,7 +12,6 @@ Plug 'tpope/vim-fugitive' "git integration
 Plug 'scrooloose/syntastic' "code syntaxis
 Plug 'Raimondi/delimitMate' "automatic closing of quotes, parenthesis...
 Plug 'yggdroot/indentline' "Show indent lines (useful for loops)
-Plug 'altercation/vim-colors-solarized' "Color scheme
 " Plug 'tmhedberg/SimpylFold' "Python folding
 Plug 'pseewald/vim-anyfold' "code folding
 Plug 'vim-airline/vim-airline'
@@ -117,11 +116,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': []}
 let g:syntastic_python_pep8_args = '--ignore="E111,E114"'
 let g:syntastic_python_pylint_args = '--disable="C0103,W0311"'
-"""For solarized
-syntax enable
-"let g:solarized_termtrans = 1  "Allows transparent terminal
-set background=dark
-colorscheme solarized
 """Folding
 nnoremap , za
 nnoremap < zA

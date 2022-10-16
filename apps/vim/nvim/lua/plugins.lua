@@ -49,6 +49,8 @@ require('packer').startup(function(use)
       'BurntSushi/ripgrep',
     }
   }
+  use({"overcache/NeoSolarized"})  -- theme
+
 
 end)
 
@@ -63,4 +65,5 @@ require('setup/completion').setup()
 require('setup/scala').setup()
 require('setup/python').setup()
 require('setup/telescope').setup()
+require('setup/solarized').setup()
 --require('setup/debugger').setup()
