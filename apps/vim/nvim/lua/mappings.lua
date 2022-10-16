@@ -22,3 +22,5 @@ map("n", "<leader>i", [[<cmd>lua require"dap".step_over()<CR>]])
 map("n", "<leader>c", [[<cmd>lua require"dap".continue()<CR>]])
 map("n", "<leader>rt", [[<cmd>lua require"dap".repl.toggle()<CR>]])
 
+-- Telescope
+map("n", "ff", [[<cmd>lua require("setup.telescope").smart_find_files()<CR>]])

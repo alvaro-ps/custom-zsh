@@ -42,6 +42,10 @@ require('packer').startup(function(use)
   })
   use({'kevinhwang91/nvim-bqf'})
   use({'neovim/nvim-lspconfig'})
+  use {
+    'nvim-telescope/telescope.nvim', branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
 end)
 
@@ -55,4 +59,5 @@ vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
 require('setup/completion').setup()
 require('setup/scala').setup()
 require('setup/python').setup()
+require('setup/telescope').setup()
 --require('setup/debugger').setup()
