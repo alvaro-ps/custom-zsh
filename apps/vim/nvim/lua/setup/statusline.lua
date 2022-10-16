@@ -3,7 +3,7 @@ local M = {}
 function M.setup()
   require('lualine').setup({
     options = {
-      theme = "gruvbox_dark",
+      theme = "solarized_dark",
     },
     sections = {
       lualine_a = {'mode'},
