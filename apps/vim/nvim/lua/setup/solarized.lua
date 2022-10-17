@@ -1,11 +1,9 @@
 local M = {}
 
 function M.setup()
-  vim.o.background = "dark" -- or "light" for light mode
-  vim.cmd([[
-    set termguicolors
-    colorscheme NeoSolarized
-  ]])
+  vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+  require("catppuccin").setup()
+  vim.api.nvim_command "colorscheme catppuccin"
 end
 
 return M

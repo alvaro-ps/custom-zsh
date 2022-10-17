@@ -54,7 +54,10 @@ require("packer").startup(function(use)
       "BurntSushi/ripgrep",
     }
   }
-  use({"overcache/NeoSolarized"})  -- theme
+  use {
+    "catppuccin/nvim",
+    as = "catppuccin",
+  }
   use({  -- Bufferbar
     "romgrk/barbar.nvim",
     requires = "kyazdani42/nvim-web-devicons"
