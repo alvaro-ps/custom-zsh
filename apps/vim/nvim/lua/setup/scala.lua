@@ -16,7 +16,7 @@ function M.setup()
   -- you *have* to have a setting to display this in your statusline or else
   -- you'll not see any messages from metals. There is more info in the help
   -- docs about this
-  --metals_config.init_options.statusBarProvider = "on"
+  metals_config.init_options.statusBarProvider = "on"
 
   -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
   local capabilities = vim.lsp.protocol.make_client_capabilities()

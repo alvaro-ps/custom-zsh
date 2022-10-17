@@ -39,6 +39,12 @@ require("packer").startup(function(use)
       "mfussenegger/nvim-dap",
     },
   })
+  use({ -- python
+    "mfussenegger/nvim-dap-python",
+    requires = {
+      "mfussenegger/nvim-dap",
+    },
+  })
   use({"kevinhwang91/nvim-bqf"})
   use({"neovim/nvim-lspconfig"})
   use { -- file and text finder
@@ -53,8 +59,8 @@ require("packer").startup(function(use)
     "romgrk/barbar.nvim",
     requires = "kyazdani42/nvim-web-devicons"
   })
-  use({
-    "rcarriga/nvim-dap-ui",   -- Debugger UI
+  use({ -- Debugger UI
+    "rcarriga/nvim-dap-ui",
     requires = {
       "mfussenegger/nvim-dap",
       "rcarriga/cmp-dap",
