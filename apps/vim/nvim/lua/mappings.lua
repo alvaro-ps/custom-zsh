@@ -14,6 +14,7 @@ map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 map("n", "<leader>h", [[<cmd>lua vim.lsp.buf.signature_help()<CR>]])
 map("n", "<leader>r", "<cmd>lua vim.lsp.buf.references()<CR>")
 map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({async=true})<CR>")
+map("n", "<leader>v", [[<cmd>lua require("goto-preview").goto_preview_definition()<CR>]])
 
 -- Debugging
 map("n", "<leader>b", [[<cmd>lua require("dap").toggle_breakpoint()<CR>]])
