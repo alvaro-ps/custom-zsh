@@ -10,9 +10,9 @@ function scala2 () {
   export SPARK_VERSION=2
 }
 
-export DATA_SCALA_UTILS_VERSION=2.1.17
+export DATA_SCALA_UTILS_VERSION=2.1.35
 export SCALA_VERSION=2.12
-export SPARK_VERSION=3
+export SPARK_VERSION=2
 SPARK_DETAILED_VERSION=3.2.1
 export SPARK_HOME="$(sdk home spark $SPARK_DETAILED_VERSION)"
 export PYSPARK_PYTHON=$(which python)
