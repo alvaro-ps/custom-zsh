@@ -18,7 +18,7 @@ map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({async=true})<CR>")
 map("n", "<leader>v", [[<cmd>lua require("goto-preview").goto_preview_definition()<CR>]])
 
 -- Debugging
-map("n", "<leader>b", [[<cmd>lua require("dap").toggle_breakpoint()<CR>]])
+map("n", "<leader>p", [[<cmd>lua require("dap").toggle_breakpoint()<CR>]])
 map("n", "<leader>n", [[<cmd>lua require("dap").step_over()<CR>]])
 map("n", "<leader>i", [[<cmd>lua require("dap").step_into()<CR>]])
 map("n", "<leader>c", [[<cmd>lua require("dap").continue()<CR>]])
