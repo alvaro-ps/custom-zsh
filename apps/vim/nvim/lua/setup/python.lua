@@ -5,7 +5,7 @@ function M.setup()
 
   -- Debug settings if you're using nvim-dap
   local dap = require("dap")
-  local dap_python = require("dap-python").setup("~/.pyenv/versions/3.9.13/bin/python")
+  local dap_python = require("dap-python").setup("~/.pyenv/shims/python")
 
 end
 
