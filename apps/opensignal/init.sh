@@ -23,7 +23,7 @@ export BLAS=/opt/homebrew/opt/openblas/lib/libopenblas.dylib
 
 function setup_repo() {
   # Ensure running in virtualenv
-  git submodule update --init --remote
+  git submodule update --recursive
   if [ -z "$VIRTUAL_ENV" ]; then
     echo "No virtual env!! Create one with 'pyenv virtualenv <python-version> <virtualenv-name>'"
     return 1

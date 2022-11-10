@@ -2,6 +2,7 @@
 brew tap opensignal/developer-toolbox git@github.com:opensignal/developer-toolbox.git
 brew install opensignal/developer-toolbox/tools openssl
 
+brew install wget
 brew install postgresql  # For DAP
 brew install openblas
 brew install gdal
