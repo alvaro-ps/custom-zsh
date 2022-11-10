@@ -14,7 +14,7 @@ function pull (){
   git pull origin "${branch}"
 }
 
-alias commit='git commit -m'
-alias unstage='git checkout --'
-alias checkout='git checkout'
-alias branch_del='git branch -D'
+alias gc='git commit -m'
+alias gunstage='git checkout --'
+alias gco='git checkout'
+alias gbd='git branch -D'
