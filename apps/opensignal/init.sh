@@ -22,15 +22,14 @@ export LAPACK=/opt/homebrew/opt/lapack/lib/liblapack.dylib
 export BLAS=/opt/homebrew/opt/openblas/lib/libopenblas.dylib
 
 function setup_repo() {
-  # Ensure running in virtualenv
   git submodule update --recursive
+  # Ensure running in virtualenv
   if [ -z "$VIRTUAL_ENV" ]; then
-    echo "No virtual env!! Create one with 'pyenv virtualenv <python-version> <virtualenv-name>'"
+    echo "No virtual env! Create one with 'pyenv virtualenv <python-version> <virtualenv-name>' and activate it"
     return 1
   fi
-  pip install virtualenv
-  virtualenv venv
-  ln -fs "$VIRTUAL_ENV" venv
+  rm -rf venv && mkdir venv
+  ln -fs "$VIRTUAL_ENV"/* venv   # link venv with whatever in the pyenv virtualenv, careful when touching this!
   pip3 install -U --extra-index-url https://repo.opnsgnl.net/repository/pypi/simple  devops-ci-tools --upgrade
-  make setup
+  make setup || true
 }
