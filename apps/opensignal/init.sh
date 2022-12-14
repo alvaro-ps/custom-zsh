@@ -30,6 +30,7 @@ function setup_repo() {
   fi
   rm -rf venv && mkdir venv
   ln -fs "$VIRTUAL_ENV"/* venv   # link venv with whatever in the pyenv virtualenv, careful when touching this!
+  pyenv pyright  # For nvim to use the virtual env
   pip3 install -U --extra-index-url https://repo.opnsgnl.net/repository/pypi/simple  devops-ci-tools --upgrade
   make setup || true
 }
