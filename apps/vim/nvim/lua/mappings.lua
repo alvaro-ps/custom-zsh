@@ -9,6 +9,9 @@ end
 vim.g.mapleader = " "
 
 -- IDE
+local opts = { noremap=true, silent=true }
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+
 map("n", "<leader>d", "<cmd>lua vim.lsp.buf.definition()<CR>")
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 map("n", "<leader>h", [[<cmd>lua vim.lsp.buf.signature_help()<CR>]])
