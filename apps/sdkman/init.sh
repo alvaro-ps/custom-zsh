@@ -10,6 +10,10 @@ function scala2 () {
   export SPARK_VERSION=2
 }
 
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 export DATA_SCALA_UTILS_VERSION=2.1.43
 export SCALA_VERSION=2.12
 export SPARK_VERSION=3
@@ -17,6 +21,3 @@ SPARK_DETAILED_VERSION=3.2.1
 export SPARK_HOME="$(sdk home spark $SPARK_DETAILED_VERSION)"
 export PYSPARK_PYTHON=python
 alias spark="spark-shell --packages org.apache.spark:spark-hadoop-cloud_${SCALA_VERSION}:${SPARK_DETAILED_VERSION}"
-
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
