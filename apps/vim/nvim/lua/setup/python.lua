@@ -2,7 +2,9 @@ local M = {}
 
 function M.setup()
   require('lspconfig').pyright.setup{}
-  --vim.g.python3_host_prog = "~/.pyenv/shims/python"
+  -- Faster startup (specially if using venvs)
+  vim.g.python3_host_prog = "python"
+  vim.g.python_host_prog = "python"
 
   -- Debug settings if you're using nvim-dap
   local dap = require("dap")
