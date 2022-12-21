@@ -3,3 +3,4 @@
 .bsp/
 project/
 target/
+pyrightconfig.json
