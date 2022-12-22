@@ -8,6 +8,7 @@ function M.setup()
   -- Example of settings
   metals_config.settings = {
     showImplicitArguments = true,
+    showImplicitConversionsAndClasses = true,
     excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
   }
 
