@@ -90,7 +90,7 @@ nnoremap <Leader>fi :NotGrep -i
 "autocmd BufWritePre *.py execute ':Black'
 "let g:black_linelength = 100
 """ For cucumber
-inoremap <leader>b   <Bar><Esc>:call <SID>align()<CR>a
+nnoremap <leader>b   <Bar><Esc>:call <SID>align()<CR>a
 
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
