@@ -5,7 +5,7 @@ function M.setup()
   local metals_config = metals.bare_config()
   local api = vim.api
 
-  -- Example of settings
+  metals_config.root_patterns = {'.git'}  -- Use the dir where .git is as root_dir for the project
   metals_config.settings = {
     showImplicitArguments = true,
     showImplicitConversionsAndClasses = true,
