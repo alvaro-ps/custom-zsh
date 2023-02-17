@@ -10,6 +10,7 @@ export OPENBLAS
 export GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=1
 export GRPC_PYTHON_BUILD_SYSTEM_ZLIB=1
 export LDFLAGS="-L/opt/homebrew/opt/lapack/lib -L/opt/homebrew/opt/openssl/lib"
+export CMAKE_PREFIX_PATH="/opt/homebrew/opt/lapack/lib;${OPENBLAS}"
 export CPPFLAGS="-I/opt/homebrew/opt/lapack/include"
 export CFLAGS="-I/opt/homebrew/opt/lapack/include -falign-functions=8"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/lapack/lib/pkgconfig"
