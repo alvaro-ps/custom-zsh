@@ -7,6 +7,7 @@ function M.setup()
 
   metals_config.root_patterns = {'.git'}  -- Use the dir where .git is as root_dir for the project
   metals_config.settings = {
+    showInferredType = true,
     showImplicitArguments = true,
     showImplicitConversionsAndClasses = true,
     excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
