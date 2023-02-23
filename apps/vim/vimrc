@@ -25,6 +25,7 @@ vnoremap jj <esc>
 nnoremap z :bnext<return>
 nnoremap Z :bprevious<return>
 nnoremap <C-z> :bdelete<return>
+nnoremap <leader>q :bdelete!<return>
 set tabstop=2
 set shiftwidth=2
 set expandtab
