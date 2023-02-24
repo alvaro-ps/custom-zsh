@@ -27,6 +27,7 @@ map("n", "<leader>r", "<cmd>lua vim.lsp.buf.references()<CR>")
 map("n", "<leader>R", "<cmd>lua vim.lsp.buf.rename()<CR>")
 map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({async=true})<CR>")
 map("n", "<leader>v", [[<cmd>lua require("goto-preview").goto_preview_definition()<CR>]])
+map("n", "<leader>m", [[<cmd>Telescope metals commands<CR>]])
 
 -- Debugging
 map("n", "<leader>p", [[<cmd>lua require("dap").toggle_breakpoint()<CR>]])
