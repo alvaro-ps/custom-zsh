@@ -8,9 +8,17 @@ end
 
 vim.g.mapleader = " "
 
+
 -- IDE
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+--general
+map("i", "jj", "<esc>")
+map("v", "jj", "<esc>")
+map("n", "z", "<cmd>:bnext<CR>")
+map("n", "Z", "<cmd>:previous<CR>")
+map("n", "<leader>q", "<cmd>:bdelete!<CR>")
+--map("n", "<C-z>", "<cmd>:bdelete<CR>")  --try to avoid using it!
 
 map("n", "<leader>d", "<cmd>lua vim.lsp.buf.definition()<CR>")
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
