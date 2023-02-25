@@ -26,24 +26,23 @@ alt - v : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # move managed window
 shift + alt - h : yabai -m window --warp west
-shift + alt - j : yabai -m window --warp southast
-shift + alt - k : yabai -m window --warp northast
+shift + alt - j : yabai -m window --warp south
+shift + alt - k : yabai -m window --warp north
 shift + alt - l : yabai -m window --warp east
 # swap managed window
 shift + cmd - h : yabai -m window --swap west
 shift + cmd - j : yabai -m window --swap south
 shift + cmd - k : yabai -m window --swap north
 shift + cmd - l : yabai -m window --swap east
-# swap managed wi
 # send to Workspace
-shift + alt - 1  : yabai -m window --display 1
-shift + alt - 2  : yabai -m window --display 2
-shift + alt - 3  : yabai -m window --display 3
-shift + alt - 4  : yabai -m window --display 4
-shift + alt - 5  : yabai -m window --display 5
-shift + alt - 6  : yabai -m window --display 6
-shift + alt - 7  : yabai -m window --display 7
-shift + alt - 8  : yabai -m window --display 8
+shift + alt - 1  : yabai -m window --space 1; yabai -m space --focus 1
+shift + alt - 2  : yabai -m window --space 2; yabai -m space --focus 2
+shift + alt - 3  : yabai -m window --space 3; yabai -m space --focus 3
+shift + alt - 4  : yabai -m window --space 4; yabai -m space --focus 4
+shift + alt - 5  : yabai -m window --space 5; yabai -m space --focus 5
+shift + alt - 6  : yabai -m window --space 6; yabai -m space --focus 6
+shift + alt - 7  : yabai -m window --space 7; yabai -m space --focus 7
+shift + alt - 8  : yabai -m window --space 8; yabai -m space --focus 8
 
 # toggle split type
 alt - e : yabai -m window --toggle split
