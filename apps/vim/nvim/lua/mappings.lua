@@ -16,6 +16,7 @@ vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 map("i", "jj", "<esc>")
 map("v", "jj", "<esc>")
 map("n", "z", "<cmd>:bnext<CR>")
+map("v", "z", "<cmd>:bnext<CR>")
 map("n", "Z", "<cmd>:previous<CR>")
 map("n", "<leader>q", "<cmd>:bdelete!<CR>")
 --map("n", "<C-z>", "<cmd>:bdelete<CR>")  --try to avoid using it!
