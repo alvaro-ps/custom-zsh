@@ -19,6 +19,9 @@ alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
+# toggle split type
+alt - e : yabai -m window --toggle split
+alt - o : yabai -m window --toggle split
 # Focus
 alt - f : yabai -m window --toggle zoom-fullscreen
 alt - space : yabai -m window --toggle float
@@ -44,8 +47,6 @@ shift + alt - 6  : yabai -m window --space 6; yabai -m space --focus 6
 shift + alt - 7  : yabai -m window --space 7; yabai -m space --focus 7
 shift + alt - 8  : yabai -m window --space 8; yabai -m space --focus 8
 
-# toggle split type
-alt - e : yabai -m window --toggle split
 
 # resize
 ctrl + alt - h : yabai -m window --resize left:-20:0 ; yabai -m window --resize right:-20:0
