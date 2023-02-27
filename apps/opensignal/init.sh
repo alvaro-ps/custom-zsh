@@ -1,6 +1,10 @@
 #!/bin/bash
-alias opensignal="cd ~/opensignal/"
-alias dap="cd ~/opensignal/data-aggregation-pipeline/"
+OPENSIGNAL="${HOME}/opensignal"
+DAP="${OPENSIGNAL}/data-aggregation-pipeline"
+SCALA_UTILS="${OPENSIGNAL}/data-scala-utils"
+alias opensignal='cd "$OPENSIGNAL"'
+alias utils='cd "$SCALA_UTILS"'
+alias dap='cd "$DAP"'
 
 ## BLAS/Lapack libraries for numpy
 
@@ -34,4 +38,12 @@ function setup_repo() {
   pyenv pyright  # For nvim to use the virtual env
   pip3 install -U --extra-index-url https://repo.opnsgnl.net/repository/pypi/simple  devops-ci-tools --upgrade
   make setup || true
+}
+
+function dap_scala_local_deploy() {
+  SCALA_UTILS_PATH="${OPENSIGNAL}/data-scala-utils/"
+  SCALA_UTILS_JAR=$(find "${SCALA_UTILS_PATH}" -name "data-scala-utils-assembly*-dev0.jar")
+  DAP_SCALA_JAR="${DAP}/venv/lib/data-scala-utils-assembly.jar"
+
+  cp -v "${SCALA_UTILS_JAR}" "${DAP_SCALA_JAR}"
 }
