@@ -41,9 +41,16 @@ function setup_repo() {
 }
 
 function dap_scala_local_deploy() {
-  SCALA_UTILS_PATH="${OPENSIGNAL}/data-scala-utils/"
-  SCALA_UTILS_JAR=$(find "${SCALA_UTILS_PATH}" -name "data-scala-utils-assembly*-dev0.jar")
+  SCALA_UTILS_JAR=$(find "${SCALA_UTILS}" -name "data-scala-utils-assembly*-dev0.jar")
   DAP_SCALA_JAR="${DAP}/venv/lib/data-scala-utils-assembly.jar"
 
   cp -v "${SCALA_UTILS_JAR}" "${DAP_SCALA_JAR}"
+}
+
+function local_geo_json_tools() {
+  GEOJSON_TOOLS_JAR=$(find "${SCALA_UTILS}" -name "geo-json-tools-assembly*-dev0.jar")
+
+  java -Xmx12g -XX:+AggressiveOpts -jar "$GEOJSON_TOOLS_JAR" "$@" \
+    && echo "All ok!" \
+    || echo "try 'make build' to get the latest version"
 }
