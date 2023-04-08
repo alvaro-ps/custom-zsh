@@ -78,8 +78,8 @@ nnoremap < zA
 """For JSON files (apparently it is already installed)
 let g:vim_json_syntax_conceal = 0
 """ For black
-"autocmd BufWritePre *.py execute ':Black'
-"let g:black_linelength = 100
+autocmd BufWritePre *.py execute ':Black'
+let g:black_linelength = 90
 """ For cucumber
 nnoremap <leader>b   <Bar><Esc>:call <SID>align()<CR>a
 
