@@ -22,6 +22,7 @@ map("n", "<leader>q", "<cmd>:bdelete!<CR>")
 --map("n", "<C-z>", "<cmd>:bdelete<CR>")  --try to avoid using it!
 
 map("n", "<leader>d", "<cmd>lua vim.lsp.buf.definition()<CR>")
+map("n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 map("n", "<leader>h", [[<cmd>lua vim.lsp.buf.signature_help()<CR>]])
 map("n", "<leader>r", "<cmd>lua vim.lsp.buf.references()<CR>")
