@@ -7,16 +7,23 @@ alias utils='cd "$SCALA_UTILS"'
 alias dap='cd "$DAP"'
 
 ## BLAS/Lapack libraries for numpy
+#openblas is keg-only, which means it was not symlinked into /opt/homebrew,
+#because macOS provides BLAS in Accelerate.framework.
+
+#For compilers to find openblas you may need to set:
+#  export LDFLAGS="-L/opt/homebrew/opt/openblas/lib"
+#  export CPPFLAGS="-I/opt/homebrew/opt/openblas/include"
 
 # FLAGS
 OPENBLAS="$(brew --prefix openblas)"
 export OPENBLAS
-export GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=1
+#export GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=1
 export GRPC_PYTHON_BUILD_SYSTEM_ZLIB=1
-export LDFLAGS="-L/opt/homebrew/opt/lapack/lib -L/opt/homebrew/opt/openssl/lib"
+export PATH="/opt/homebrew/opt/openssl@3/bin/:$PATH"  # Give priority to openssl over libressl (default in mac)
+export LDFLAGS="-L/opt/homebrew/opt/lapack/lib -L/opt/homebrew/opt/openssl@3/lib"
 export CMAKE_PREFIX_PATH="/opt/homebrew/opt/lapack/lib;${OPENBLAS}"
 export CPPFLAGS="-I/opt/homebrew/opt/lapack/include"
-export CFLAGS="-I/opt/homebrew/opt/lapack/include -falign-functions=8"
+export CFLAGS="-I/opt/homebrew/opt/lapack/include -I/opt/homebrew/opt/openssl@3/include -falign-functions=8"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/lapack/lib/pkgconfig"
 export NPY_DISTUTILS_APPEND_FLAGS=1
 export SYSTEM_VERSION_COMPAT=1
