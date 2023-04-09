@@ -82,6 +82,9 @@ require("packer").startup(function(use)
   use({ -- goto-preview
     "rmagatti/goto-preview"
   })
+  use({  -- Symbols outline
+    "simrat39/symbols-outline.nvim"
+  })
 
 
 
@@ -105,3 +108,4 @@ require("setup/treesitter").setup()
 require("setup/tree").setup()
 require("setup/statusline").setup()
 require("setup/terraform").setup()
+require("setup/symbols_outline").setup()
