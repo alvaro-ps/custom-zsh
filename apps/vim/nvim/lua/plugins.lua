@@ -85,6 +85,12 @@ require("packer").startup(function(use)
   use({  -- Symbols outline
     "simrat39/symbols-outline.nvim"
   })
+  use({ -- file finding
+    "ThePrimeagen/harpoon",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  })
 
 
 
