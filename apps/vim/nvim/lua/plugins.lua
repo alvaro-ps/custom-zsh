@@ -91,9 +91,9 @@ require("packer").startup(function(use)
       "nvim-lua/plenary.nvim",
     },
   })
-
-
-
+  use({  -- leave context top screen (class, function, loop, ...)
+    "nvim-treesitter/nvim-treesitter-context"
+  })
 end)
 
 -- global
