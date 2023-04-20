@@ -13,7 +13,7 @@ Plug 'yggdroot/indentline' "Show indent lines (useful for loops)
 Plug 'easymotion/vim-easymotion' "simpler way to use some motions in vim
 Plug 'tmhedberg/matchit' "extension of % for HTM, latex, ...
 Plug 'sheerun/vim-polyglot'  "highlighting for some files (Jenkinsfiles)
-Plug 'psf/black', { 'branch': 'stable' }  "python black
+"Plug 'psf/black', { 'branch': 'stable' }  "python black
 Plug 'godlygeek/tabular'
 
 
@@ -79,8 +79,8 @@ nnoremap < zA
 """For JSON files (apparently it is already installed)
 let g:vim_json_syntax_conceal = 0
 """ For black
-autocmd BufWritePre *.py execute ':Black'
-let g:black_linelength = 90
+"autocmd BufWritePre *.py execute ':Black'
+"let g:black_linelength = 90
 """ For cucumber
 nnoremap <leader>b   <Bar><Esc>:call <SID>align()<CR>a
 
