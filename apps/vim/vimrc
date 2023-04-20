@@ -24,7 +24,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set autoindent
-set nu
+set number
+set relativenumber
 set colorcolumn=90
 set backupcopy=yes
 set nowrap
