@@ -14,7 +14,25 @@ function pull (){
   git pull origin "${branch}"
 }
 
-alias gc='git commit -m'
+function get_jira_ticket () {
+  get_branch
+  ticket=$(echo "${branch}" | grep -oE "([a-zA-Z]+-[0-9]+)")
+}
+
+function gc() {
+  message="$1"
+  get_jira_ticket
+
+  if [ -n "$ticket" ]; then
+    prefix="[${ticket}] "
+  else
+    prefix=""
+  fi
+  git commit -m "${prefix}${message}"
+}
+
+#alias gc='git commit -m'
+alias gs='git status'
 alias gunstage='git checkout --'
 alias gco='git checkout'
 alias gbd='git branch -D'
