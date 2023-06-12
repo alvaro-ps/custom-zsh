@@ -16,7 +16,7 @@ function pull (){
 
 function get_jira_ticket () {
   get_branch
-  ticket=$(echo "${branch}" | grep -oE "([a-zA-Z]+-[0-9]+)")
+  ticket=$(echo "${branch}" | grep -oE "([a-zA-Z]+-[0-9]+)" | head -n1)
 }
 
 function gc() {
