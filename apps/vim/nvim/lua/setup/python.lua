@@ -10,6 +10,9 @@ function M.setup()
   local dap = require("dap")
   local dap_python = require("dap-python").setup("python")
 
+  -- Cucumber (behave)
+  require('lspconfig').cucumber_language_server.setup{}
+
 end
 
 return M

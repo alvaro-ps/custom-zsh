@@ -47,6 +47,8 @@ require("packer").startup(function(use)
   })
   use({"kevinhwang91/nvim-bqf"})
   use({"neovim/nvim-lspconfig"})
+  use({"williamboman/mason.nvim"}) -- for easy install of LSP, DAP, linters...
+  use({"williamboman/mason-lspconfig.nvim"})
   use { -- file and text finder
     "nvim-telescope/telescope.nvim", branch = "0.1.x",
     requires = {
@@ -104,6 +106,7 @@ vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
 -- This is similiar to what I use
 
 require("setup/completion").setup()
+require("setup/mason").setup()
 require("setup/scala").setup()
 require("setup/python").setup()
 require("setup/telescope").setup()
