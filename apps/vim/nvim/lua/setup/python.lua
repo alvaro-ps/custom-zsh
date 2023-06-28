@@ -11,7 +11,13 @@ function M.setup()
   local dap_python = require("dap-python").setup("python")
 
   -- Cucumber (behave)
-  require('lspconfig').cucumber_language_server.setup{}
+  require('lspconfig').cucumber_language_server.setup {
+    settings = {
+      cucumber = {
+        glue = { "features/**/*steps.py" }
+      }
+    }
+  }
 
 end
 

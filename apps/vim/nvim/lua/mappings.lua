@@ -42,6 +42,7 @@ map("n", "<leader>g", [[<cmd>lua require("dapui").toggle()<CR>]])
 -- finding files: Telescope & Harpoonn
 map("n", "ff", [[<cmd>lua require("setup.telescope").smart_find_files()<CR>]])
 map("n", "ft", [[<cmd>lua require("telescope.builtin").live_grep()<CR>]])
+map("n", "fp", [[<cmd>lua require("telescope.builtin").live_grep{ glob_pattern="*.py"}<CR>]])
 map("n", "fg", [[<cmd>lua require("telescope.builtin").git_commits()<CR>]])
 map("n", "<leader>a", [[<cmd>lua require("harpoon.mark").add_file()<CR>]])
 map("n", "<leader>l", [[<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]])
