@@ -9,7 +9,7 @@ function M.setup()
 
   require('nvim-treesitter.configs').setup {
     -- A list of parser names, or "all"
-    ensure_installed = { "lua", "python", "scala", "bash", "sql", "dockerfile"},
+    ensure_installed = { "lua", "python", "scala", "bash", "sql", "dockerfile", "java"},
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,

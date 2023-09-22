@@ -10,6 +10,7 @@ function M.setup()
       --"terraform-ls",
       "tflint",
       "pyright",
+      "jdtls",  --java
     },
   }
 end

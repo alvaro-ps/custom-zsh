@@ -45,6 +45,7 @@ require("packer").startup(function(use)
       "mfussenegger/nvim-dap",
     },
   })
+  use({"mfussenegger/nvim-jdtls"})  --java
   use({"kevinhwang91/nvim-bqf"})
   use({"neovim/nvim-lspconfig"})
   use({"williamboman/mason.nvim"}) -- for easy install of LSP, DAP, linters...
@@ -118,3 +119,4 @@ require("setup/tree").setup()
 require("setup/statusline").setup()
 require("setup/terraform").setup()
 require("setup/symbols_outline").setup()
+require("setup/java").setup()
