@@ -11,6 +11,7 @@ function M.setup()
       "tflint",
       "pyright",
       "jdtls",  --java
+      "yamlls",
     },
   }
 end
