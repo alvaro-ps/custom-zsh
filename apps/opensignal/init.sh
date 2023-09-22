@@ -61,3 +61,5 @@ function local_geo_json_tools() {
     && echo "All ok!" \
     || echo "try 'make build' to get the latest version"
 }
+
+alias local_airflow="SQLALCHEMY_SILENCE_UBER_WARNING=1 airflow variables import dev/variables.json && airflow standalone"
