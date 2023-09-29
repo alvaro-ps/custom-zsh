@@ -6,8 +6,7 @@ function M.setup()
     ensure_installed = {
       "cucumber_language_server",
       -- check https://github.com/cucumber/language-server/pull/74/files for cucumber
-
-      --"terraform-ls",
+      "terraformls",
       "tflint",
       "pyright",
       "jdtls",  --java
