@@ -11,6 +11,7 @@ function M.setup()
       "pyright",
       "jdtls",  --java
       "yamlls",
+      "bashls",
     },
   }
 end
