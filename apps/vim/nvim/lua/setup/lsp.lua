@@ -7,6 +7,11 @@ function M.setup()
   scala()
   terraform()
   yaml()
+  lua()
+end
+
+function lua()
+  require('lspconfig').lua_ls.setup{}
 end
 
 function rust()
