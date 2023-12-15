@@ -12,8 +12,10 @@ function M.setup()
       "jdtls",  --java
       "yamlls",
       "bashls",
+      "rust_analyzer",
     },
   }
+
 end
 
 return M

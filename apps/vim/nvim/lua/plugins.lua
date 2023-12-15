@@ -106,10 +106,9 @@ vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
 -- completion related settings
 -- This is similiar to what I use
 
-require("setup/completion").setup()
 require("setup/mason").setup()
-require("setup/scala").setup()
-require("setup/python").setup()
+require("setup/completion").setup()
+require("setup/lsp").setup()
 require("setup/telescope").setup()
 require("setup/colorscheme").setup()
 require("setup/bufferbar").setup()
@@ -117,7 +116,4 @@ require("setup/debugger").setup()
 require("setup/treesitter").setup()
 require("setup/tree").setup()
 require("setup/statusline").setup()
-require("setup/terraform").setup()
 require("setup/symbols_outline").setup()
-require("setup/java").setup()
-require("setup/yaml").setup()

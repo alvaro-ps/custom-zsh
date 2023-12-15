@@ -1,6 +1,61 @@
 local M = {}
 
 function M.setup()
+  rust()
+  python()
+  java()
+  scala()
+  terraform()
+  yaml()
+end
+
+function rust()
+  require('lspconfig').rust_analyzer.setup{}
+end
+
+function python()
+  require('lspconfig').pyright.setup{}
+  -- Faster startup (specially if using venvs)
+  vim.g.python3_host_prog = "python"
+  vim.g.python_host_prog = "python"
+
+  -- Debug settings if you're using nvim-dap
+  local dap = require("dap")
+  local dap_python = require("dap-python").setup("python")
+
+  -- Cucumber (behave)
+  require('lspconfig').cucumber_language_server.setup {
+    settings = {
+      cucumber = {
+        glue = { "features/**/*steps.py" }
+      }
+    }
+  }
+end
+
+function java()
+  require('lspconfig').jdtls.setup{}
+  local config = {
+    cmd = {os.getenv("HOME") .. '/.local/share/nvim/mason/bin/jdtls'},
+    root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
+  }
+  --require('jdtls').start_or_attach(config)
+end
+
+function terraform()
+  local lsp = require('lspconfig')
+
+  lsp.terraformls.setup{}
+  lsp.tflint.setup{}
+
+  vim.api.nvim_create_autocmd({"BufWritePre"}, {
+    pattern = {"*.tf", "*.tfvars"},
+    callback = vim.lsp.buf.format,
+  })
+
+end
+
+function scala()
   local metals = require("metals")
   local metals_config = metals.bare_config()
   local api = vim.api
@@ -63,6 +118,20 @@ function M.setup()
     end,
     group = nvim_metals_group,
   })
+
+end
+
+function yaml()
+    require('lspconfig').yamlls.setup{
+        on_attach=on_attach,
+        settings = {
+            yaml = {
+                schemas = {
+                    ["client_configs/schema/schema.json"]= "client_configs/*.yaml",
+                }
+            }
+        }
+    }
 end
 
 return M
