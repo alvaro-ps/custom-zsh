@@ -1,28 +1,30 @@
 local M = {}
 
 function M.setup()
-  rust()
-  python()
-  java()
-  scala()
-  terraform()
-  yaml()
-  lua()
+  Rust()
+  Python()
+  Java()
+  Scala()
+  Terraform()
+  Yaml()
+  Lua()
 end
 
-function lua()
+function Lua()
   require('lspconfig').lua_ls.setup{}
 end
 
-function rust()
+function Rust()
   require('lspconfig').rust_analyzer.setup{}
 end
 
-function python()
+function Python()
   require('lspconfig').pyright.setup{}
   -- Faster startup (specially if using venvs)
   vim.g.python3_host_prog = "python"
   vim.g.python_host_prog = "python"
+  -- Formatting with Ruff
+  require('lspconfig').ruff_lsp.setup{}
 
   -- Debug settings if you're using nvim-dap
   local dap = require("dap")
@@ -38,7 +40,7 @@ function python()
   }
 end
 
-function java()
+function Java()
   require('lspconfig').jdtls.setup{}
   local config = {
     cmd = {os.getenv("HOME") .. '/.local/share/nvim/mason/bin/jdtls'},
@@ -47,7 +49,7 @@ function java()
   --require('jdtls').start_or_attach(config)
 end
 
-function terraform()
+function Terraform()
   local lsp = require('lspconfig')
 
   lsp.terraformls.setup{}
@@ -60,7 +62,7 @@ function terraform()
 
 end
 
-function scala()
+function Scala()
   local metals = require("metals")
   local metals_config = metals.bare_config()
   local api = vim.api
@@ -126,7 +128,7 @@ function scala()
 
 end
 
-function yaml()
+function Yaml()
     require('lspconfig').yamlls.setup{
         on_attach=on_attach,
         settings = {
