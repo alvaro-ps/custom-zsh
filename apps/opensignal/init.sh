@@ -20,18 +20,19 @@ export OPENBLAS
 #export GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=1
 export GRPC_PYTHON_BUILD_SYSTEM_ZLIB=1
 export PATH="/opt/homebrew/opt/openssl@3/bin/:$PATH"  # Give priority to openssl over libressl (default in mac)
-export LDFLAGS="-L/opt/homebrew/opt/lapack/lib -L/opt/homebrew/opt/openssl@3/lib"
+export LDFLAGS="-L/opt/homebrew/opt/lapack/lib -L/opt/homebrew/opt/openssl@3/lib -L$(brew --prefix)/lib"
 export CMAKE_PREFIX_PATH="/opt/homebrew/opt/lapack/lib;${OPENBLAS}"
-export CPPFLAGS="-I/opt/homebrew/opt/lapack/include"
-export CFLAGS="-I/opt/homebrew/opt/lapack/include -I/opt/homebrew/opt/openssl@3/include -falign-functions=8"
+export CFLAGS="-I/opt/homebrew/opt/lapack/include -I/opt/homebrew/opt/openssl@3/include -I$(brew --prefix)/include  -falign-functions=8" # only for c
+export CPPFLAGS="-I/opt/homebrew/opt/lapack/include" # for c and cpp 
+export CXXFLAGS="-std=c++17"  # only for cpp
 export PKG_CONFIG_PATH="/opt/homebrew/opt/lapack/lib/pkgconfig"
 export NPY_DISTUTILS_APPEND_FLAGS=1
 export SYSTEM_VERSION_COMPAT=1
-# export CFLAGS="-falign-functions=8"
-#
+
 ## Libraries
 export LAPACK=/opt/homebrew/opt/lapack/lib/liblapack.dylib
 export BLAS=/opt/homebrew/opt/openblas/lib/libopenblas.dylib
+export LIBRARY_PATH="$LIBRARY_PATH:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib" # gfortran
 
 function setup_repo() {
   git submodule update --recursive
