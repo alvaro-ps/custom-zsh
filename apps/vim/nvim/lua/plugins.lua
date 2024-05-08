@@ -30,6 +30,7 @@ require("packer").startup(function(use)
       { "hrsh7th/cmp-vsnip" },
       { "hrsh7th/vim-vsnip" },
       { "hrsh7th/cmp-buffer" },
+      { "FelipeLema/cmp-async-path" },
     },
   })
   use({ -- scala
@@ -69,7 +70,7 @@ require("packer").startup(function(use)
     "rcarriga/nvim-dap-ui",
     requires = {
       "mfussenegger/nvim-dap",
-      "rcarriga/cmp-dap",
+      "nvim-neotest/nvim-nio",
   }})
   use({"nvim-treesitter/nvim-treesitter"})
   use({ -- File Tree

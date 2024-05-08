@@ -11,12 +11,14 @@ end
 
 function M.setup()
   local cmp = require("cmp")
+
   cmp.setup({
     sources = {
       { name = "nvim_lsp" },
       { name = "vsnip" },
       { name = "treesitter"},
       { name = "buffer" },
+      { name = "async_path" },
     },
     snippet = {
       expand = function(args)
@@ -46,18 +48,20 @@ function M.setup()
         end
       end, { "i", "s" }),
     }),
+    --[[
     enabled = function()
       return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
         or require("cmp_dap").is_dap_buffer()
     end
+    --]]
   })
 
   require("cmp").setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
-  sources = {
-    { name = "dap" },
-  },
+    sources = {
+      { name = "dap" },
+    },
+  })
 
-})
   require("goto-preview").setup({
     width = 120, -- Width of the floating window
     height = 15, -- Height of the floating window
