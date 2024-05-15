@@ -19,7 +19,15 @@ function Rust()
 end
 
 function Python()
-  require('lspconfig').pyright.setup{}
+  require('lspconfig').pyright.setup {
+    settings = {
+        python = {
+            analysis = {
+                typeCheckingMode = "strict",
+            }
+        },
+    }
+  }
   -- Faster startup (specially if using venvs)
   vim.g.python3_host_prog = "python"
   vim.g.python_host_prog = "python"
@@ -135,6 +143,7 @@ function Yaml()
             yaml = {
                 schemas = {
                     ["client_configs/schema/schema.json"]= "client_configs/*.yaml",
+                    ["testing/validation_tests/yaml_schema.json"]= "customer_configs/*.yaml",
                 }
             }
         }
