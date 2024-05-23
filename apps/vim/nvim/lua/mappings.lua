@@ -35,6 +35,8 @@ map("n", "<leader>b", [[<cmd>Telescope buffers initial_mode=normal<CR>]])
 map("n", "<leader>H", [[<cmd>Telescope command_history initial_mode=normal<CR>]])
 map("n", "<leader>D", [[<cmd>Telescope diagnostics initial_mode=normal<CR>]])
 map("n", "<leader>k", "<cmd>:SymbolsOutline<CR>")
+-- Git
+map("n", "<leader>B", [[<cmd>Git blame<CR>]])
 
 -- Debugging
 map("n", "<leader>p", [[<cmd>lua require("dap").toggle_breakpoint()<CR>]])
