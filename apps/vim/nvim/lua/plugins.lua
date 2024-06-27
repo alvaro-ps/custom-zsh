@@ -98,6 +98,13 @@ require("packer").startup(function(use)
   use({  -- leave context top screen (class, function, loop, ...)
     "nvim-treesitter/nvim-treesitter-context"
   })
+  use { -- file and text finder
+    "CopilotC-Nvim/CopilotChat.nvim", branch = "canary",
+    requires = {
+      { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+      { "nvim-lua/plenary.nvim" }, -- for curl, 
+    }
+  }
 end)
 
 -- global
@@ -118,3 +125,4 @@ require("setup/treesitter").setup()
 require("setup/tree").setup()
 require("setup/statusline").setup()
 require("setup/symbols_outline").setup()
+require("setup/copilot").setup()

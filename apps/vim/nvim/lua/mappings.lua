@@ -38,11 +38,14 @@ map("n", "<leader>k", "<cmd>:SymbolsOutline<CR>")
 -- Git
 map("n", "<leader>B", [[<cmd>Git blame<CR>]])
 
+-- Copilot
+map("n", "<leader>c", [[<cmd>CopilotChatToggle<CR>]])
+
 -- Debugging
 map("n", "<leader>p", [[<cmd>lua require("dap").toggle_breakpoint()<CR>]])
 map("n", "<leader>n", [[<cmd>lua require("dap").step_over()<CR>]])
 map("n", "<leader>i", [[<cmd>lua require("dap").step_into()<CR>]])
-map("n", "<leader>c", [[<cmd>lua require("dap").continue()<CR>]])
+map("n", "<leader>C", [[<cmd>lua require("dap").continue()<CR>]])
 map("n", "<leader>g", [[<cmd>lua require("dapui").toggle()<CR>]])
 
 -- finding files: Telescope & Harpoonn
