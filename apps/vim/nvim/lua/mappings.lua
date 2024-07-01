@@ -19,6 +19,8 @@ map("n", "z", "<cmd>:bnext<CR>")
 map("v", "z", "<cmd>:bnext<CR>")
 map("n", "Z", "<cmd>:previous<CR>")
 map("n", "<leader>q", "<cmd>:bdelete!<CR>")
+map("n", "W", "<c-w>")
+map("v", "W", "<c-w>")
 --map("n", "<C-z>", "<cmd>:bdelete<CR>")  --try to avoid using it!
 
 map("n", "<leader>d", "<cmd>lua vim.lsp.buf.definition()<CR>")
@@ -40,6 +42,9 @@ map("n", "<leader>B", [[<cmd>Git blame<CR>]])
 
 -- Copilot
 map("n", "<leader>c", [[<cmd>CopilotChatToggle<CR>]])
+map("n", "<leader>c", [[<cmd>CopilotChatReview<CR>]])
+map("v", "<leader>e", [[<cmd>CopilotChatExplain<CR>]])
+map("v", "<leader>o", [[<cmd>CopilotChatOptimize<CR>]])
 
 -- Debugging
 map("n", "<leader>p", [[<cmd>lua require("dap").toggle_breakpoint()<CR>]])
