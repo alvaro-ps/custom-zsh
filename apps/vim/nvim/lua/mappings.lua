@@ -42,7 +42,7 @@ map("n", "<leader>B", [[<cmd>Git blame<CR>]])
 
 -- Copilot
 map("n", "<leader>c", [[<cmd>CopilotChatToggle<CR>]])
-map("n", "<leader>c", [[<cmd>CopilotChatReview<CR>]])
+map("v", "<leader>r", [[<cmd>CopilotChatReview<CR>]])
 map("v", "<leader>e", [[<cmd>CopilotChatExplain<CR>]])
 map("v", "<leader>o", [[<cmd>CopilotChatOptimize<CR>]])
 
