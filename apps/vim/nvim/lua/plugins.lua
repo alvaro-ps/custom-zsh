@@ -105,6 +105,7 @@ require("packer").startup(function(use)
       { "nvim-lua/plenary.nvim" }, -- for curl, 
     }
   }
+  use({"ggandor/leap.nvim"})
 end)
 
 -- global
@@ -126,3 +127,4 @@ require("setup/tree").setup()
 require("setup/statusline").setup()
 require("setup/symbols_outline").setup()
 require("setup/copilot").setup()
+require("setup/motion").setup()
