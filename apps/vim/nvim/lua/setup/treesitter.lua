@@ -1,7 +1,6 @@
 local M = {}
 
 function M.setup()
-
   local opt = vim.opt
 
   opt.foldmethod = "expr"
@@ -9,7 +8,7 @@ function M.setup()
 
   require('nvim-treesitter.configs').setup {
     -- A list of parser names, or "all"
-    ensure_installed = { "lua", "python", "scala", "bash", "sql", "dockerfile", "java"},
+    ensure_installed = { "lua", "python", "scala", "bash", "sql", "dockerfile", "java", "terraform" },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -33,7 +32,6 @@ function M.setup()
       additional_vim_regex_highlighting = false,
     },
   }
-
 end
 
 return M
