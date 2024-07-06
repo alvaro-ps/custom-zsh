@@ -3,7 +3,7 @@ local M = {}
 function M.setup()
   require('lualine').setup({
     options = {
-      theme = "material",
+      theme = "nightfly",
     },
     sections = {
       lualine_a = {'mode'},
