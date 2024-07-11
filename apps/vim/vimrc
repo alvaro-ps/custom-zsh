@@ -70,9 +70,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_python_pep8_args = '--ignore="E111,E114"'
 let g:syntastic_python_pylint_args = '--disable="C0103,W0311"'
 let g:syntastic_python_pylint_post_args="--max-line-length=90"
-"""Folding
-nnoremap , za
-nnoremap < zA
 
 """For JSON files (apparently it is already installed)
 let g:vim_json_syntax_conceal = 0

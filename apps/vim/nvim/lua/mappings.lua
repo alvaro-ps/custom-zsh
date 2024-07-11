@@ -15,14 +15,20 @@ vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 --general
 map("i", "jj", "<esc>")
 map("v", "jj", "<esc>")
-map("n", "z", "<cmd>:bnext<CR>")
-map("v", "z", "<cmd>:bnext<CR>")
-map("n", "Z", "<cmd>:previous<CR>")
+map('n', '<S-tab>', '<cmd>BufferPrevious<CR>', opts)
+map('n', '<tab>', '<Cmd>BufferNext<CR>', opts)
 map("n", "<leader>q", "<cmd>:bdelete!<CR>")
 map("n", "W", "<c-w>")
 map("v", "W", "<c-w>")
 --map("n", "<C-z>", "<cmd>:bdelete<CR>")  --try to avoid using it!
 
+-- Folds
+map('n', ',', 'za', opts)
+map('n', '.', 'zA', opts)
+map('n', '<', 'zM', opts)
+map('n', '>', 'zR', opts)
+
+-- Plugins
 map("n", "<leader>d", "<cmd>lua vim.lsp.buf.definition()<CR>")
 map("n", "<leader>A", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
@@ -69,7 +75,3 @@ map("n", "<leader><shift><tab>", [[<cmd>lua require("harpoon.ui").nav_prev()<CR>
 
 -- Tree
 map("n", "<C-n>", [[<cmd>lua require("nvim-tree.api").tree.toggle()<CR>]])
-
--- Buffer
-map('n', 'Z', '<Cmd>BufferPrevious<CR>', opts)
-map('n', 'z', '<Cmd>BufferNext<CR>', opts)
