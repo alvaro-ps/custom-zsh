@@ -11,7 +11,17 @@ function M.setup()
 end
 
 function Lua()
-  require('lspconfig').lua_ls.setup{}
+  require('lspconfig').lua_ls.setup({
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = {
+            "vim", -- avoid the message 'undefined vim'
+          }
+        }
+      }
+    }
+  })
 end
 
 function Rust()
