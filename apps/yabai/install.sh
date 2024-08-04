@@ -2,7 +2,8 @@
 
 brew install koekeishiya/formulae/yabai
 #brew upgrade yabai
-brew services start yabai
+# brew services start yabai
+yabai --restart-service
 
 # create a new file for writing - visudo uses the vim editor by default.
 # go read about this if you have no idea what is going on.
