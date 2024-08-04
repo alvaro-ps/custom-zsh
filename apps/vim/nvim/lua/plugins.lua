@@ -106,6 +106,17 @@ require("packer").startup(function(use)
     }
   }
   use({"ggandor/leap.nvim"})
+  use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      -- languages
+      "nvim-neotest/neotest-python"
+    }
+  }
 end)
 
 -- global

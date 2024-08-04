@@ -51,6 +51,10 @@ map("n", "<leader>c", [[<cmd>CopilotChatToggle<CR>]])
 map("v", "<leader>r", [[<cmd>CopilotChatReview<CR>]])
 map("v", "<leader>e", [[<cmd>CopilotChatExplain<CR>]])
 map("v", "<leader>o", [[<cmd>CopilotChatOptimize<CR>]])
+-- neotest
+map("n", "<leader>t", [[<cmd>lua require("neotest").run.run()<CR>]])
+map("n", "<leader><leader>t", [[<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<CR>]])
+map("n", "<leader>tw", [[<cmd>lua require("neotest").watch.toggle(vim.fn.expand("%"))<CR>]])
 
 -- Debugging
 map("n", "<leader>p", [[<cmd>lua require("dap").toggle_breakpoint()<CR>]])
