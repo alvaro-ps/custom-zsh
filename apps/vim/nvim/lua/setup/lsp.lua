@@ -49,12 +49,6 @@ function Python()
     }
   }
 
-  -- neotest
-  require("neotest").setup({
-    adapters = {
-      require("neotest-python")
-    }
-  })
 end
 
 function Java()

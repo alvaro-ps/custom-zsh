@@ -114,7 +114,8 @@ require("packer").startup(function(use)
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
       -- languages
-      "nvim-neotest/neotest-python"
+      "nvim-neotest/neotest-python",
+      "stevanmilic/neotest-scala",
     }
   }
 end)
@@ -139,3 +140,4 @@ require("setup/statusline").setup()
 require("setup/symbols_outline").setup()
 require("setup/copilot").setup()
 require("setup/motion").setup()
+require("setup/neotest").setup()

@@ -20,6 +20,11 @@ map('n', '<tab>', '<Cmd>BufferNext<CR>', opts)
 map("n", "<leader>q", "<cmd>:bdelete!<CR>")
 map("n", "W", "<c-w>")
 map("v", "W", "<c-w>")
+map("n", "<leader>w", "<c-w>")
+map("v", "<leader>w", "<c-w>")
+
+map("n", "<c-h>", "<cmd>vertical resize +10<CR>")
+map("n", "<c-l>", "<cmd>vertical resize -10<CR>")
 --map("n", "<C-z>", "<cmd>:bdelete<CR>")  --try to avoid using it!
 
 -- Folds
@@ -41,7 +46,7 @@ map("n", "<leader>m", [[<cmd>Mason<CR>]])
 map("n", "<leader>M", [[<cmd>Telescope metals commands initial_mode=normal<CR>]])
 map("n", "<leader>b", [[<cmd>Telescope buffers initial_mode=normal<CR>]])
 map("n", "<leader>H", [[<cmd>Telescope command_history initial_mode=normal<CR>]])
-map("n", "<leader>D", [[<cmd>Telescope diagnostics initial_mode=normal<CR>]])
+map("n", "<leader>E", [[<cmd>Telescope diagnostics initial_mode=normal<CR>]])
 map("n", "<leader>k", "<cmd>:SymbolsOutline<CR>")
 -- Git
 map("n", "<leader>B", [[<cmd>Git blame<CR>]])
@@ -55,6 +60,7 @@ map("v", "<leader>o", [[<cmd>CopilotChatOptimize<CR>]])
 map("n", "<leader>t", [[<cmd>lua require("neotest").run.run()<CR>]])
 map("n", "<leader><leader>t", [[<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<CR>]])
 map("n", "<leader>tw", [[<cmd>lua require("neotest").watch.toggle(vim.fn.expand("%"))<CR>]])
+map("n", "<leader>to", [[<cmd>Neotest output<CR>]])
 
 -- Debugging
 map("n", "<leader>p", [[<cmd>lua require("dap").toggle_breakpoint()<CR>]])
