@@ -20,5 +20,7 @@ export SPARK_VERSION=3
 SPARK_DETAILED_VERSION=3.4.1
 export SPARK_HOME="$(sdk home spark $SPARK_DETAILED_VERSION)"
 export PYSPARK_PYTHON=python
-alias spark="spark-shell --packages org.apache.spark:spark-hadoop-cloud_${SCALA_VERSION}:${SPARK_DETAILED_VERSION}"
+export SPARK_PACKAGES="org.apache.spark:spark-hadoop-cloud_${SCALA_VERSION}:${SPARK_DETAILED_VERSION}"
+alias spark="spark-shell --packages ${SPARK_PACKAGES}"
+alias pyspark="PYSPARK_DRIVER_PYTHON=ipython pyspark --packages ${SPARK_PACKAGES}"
 alias scala-tree="tree -I target -I project"
