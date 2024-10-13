@@ -8,6 +8,7 @@ function M.setup()
   Terraform()
   Yaml()
   Lua()
+  Haskell()
 end
 
 function Lua()
@@ -141,16 +142,20 @@ end
 
 function Yaml()
     require('lspconfig').yamlls.setup{
-        on_attach=on_attach,
         settings = {
             yaml = {
                 schemas = {
                     ["client_configs/schema/schema.json"]= "client_configs/*.yaml",
                     ["testing/validation_tests/yaml_schema.json"]= "customer_configs/*.yaml",
+                    ["kubernetes"]= "kustomize/**/*.yaml",
                 }
             }
         }
     }
+end
+
+function Haskell()
+  require('lspconfig').hls.setup{}
 end
 
 return M
