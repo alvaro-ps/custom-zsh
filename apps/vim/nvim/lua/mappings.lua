@@ -44,9 +44,6 @@ map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({async=true})<CR>")
 map("n", "<leader>v", [[<cmd>lua require("goto-preview").goto_preview_definition()<CR>]])
 map("n", "<leader>m", [[<cmd>Mason<CR>]])
 map("n", "<leader>M", [[<cmd>Telescope metals commands initial_mode=normal<CR>]])
-map("n", "<leader>b", [[<cmd>Telescope buffers initial_mode=normal<CR>]])
-map("n", "<leader>H", [[<cmd>Telescope command_history initial_mode=normal<CR>]])
-map("n", "<leader>E", [[<cmd>Telescope diagnostics initial_mode=normal<CR>]])
 map("n", "<leader>k", "<cmd>:SymbolsOutline<CR>")
 -- Git
 map("n", "<leader>B", [[<cmd>Git blame<CR>]])
@@ -69,11 +66,15 @@ map("n", "<leader>i", [[<cmd>lua require("dap").step_into()<CR>]])
 map("n", "<leader>C", [[<cmd>lua require("dap").continue()<CR>]])
 map("n", "<leader>g", [[<cmd>lua require("dapui").toggle()<CR>]])
 
--- finding files: Telescope & Harpoonn
+-- finding stuff: Telescope
 map("n", "ff", [[<cmd>lua require("setup.telescope").smart_find_files()<CR>]])
 map("n", "ft", [[<cmd>lua require("telescope.builtin").live_grep()<CR>]])
 map("n", "fp", [[<cmd>lua require("telescope.builtin").live_grep{ glob_pattern="*.py"}<CR>]])
 map("n", "fg", [[<cmd>lua require("telescope.builtin").git_commits()<CR>]])
+map("n", "fb", [[<cmd>Telescope buffers initial_mode=normal<CR>]])
+map("n", "fh", [[<cmd>Telescope command_history initial_mode=normal<CR>]])
+map("n", "fd", [[<cmd>Telescope diagnostics initial_mode=normal<CR>]])
+-- Harpoon
 map("n", "<leader>a", [[<cmd>lua require("harpoon.mark").add_file()<CR>]])
 map("n", "<leader>l", [[<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]])
 map("n", "<leader>1", [[<cmd>lua require("harpoon.ui").nav_file(1)<CR>]])
@@ -84,4 +85,4 @@ map("n", "<leader><shift><tab>", [[<cmd>lua require("harpoon.ui").nav_prev()<CR>
 
 
 -- Tree
-map("n", "<C-n>", [[<cmd>lua require("nvim-tree.api").tree.toggle()<CR>]])
+map("n", "<leader>n", [[<cmd>lua require("nvim-tree.api").tree.toggle()<CR>]])
