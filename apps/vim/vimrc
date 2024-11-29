@@ -88,4 +88,4 @@ function! s:align()
 endfunction
 
 """ Tabularize
-nnoremap <Leader>t :Tabularize /\|<CR><return>
+nnoremap <Leader>T :Tabularize /\|<CR><return>
