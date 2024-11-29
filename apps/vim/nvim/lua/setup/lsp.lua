@@ -35,7 +35,7 @@ function Python()
   vim.g.python3_host_prog = "python"
   vim.g.python_host_prog = "python"
   -- Formatting with Ruff
-  require('lspconfig').ruff_lsp.setup{}
+  require('lspconfig').ruff.setup{}
 
   -- Debug settings if you're using nvim-dap
   local dap = require("dap")
@@ -141,13 +141,26 @@ function Scala()
 end
 
 function Yaml()
+    local dbt_lastest_schema_url = "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/latest/"
     require('lspconfig').yamlls.setup{
         settings = {
             yaml = {
                 schemas = {
-                    ["client_configs/schema/schema.json"]= "client_configs/*.yaml",
-                    ["testing/validation_tests/yaml_schema.json"]= "customer_configs/*.yaml",
+                    ["client_configs/schema/schema.json"] = "client_configs/*.yaml",
+                    ["testing/validation_tests/yaml_schema.json"] = "customer_configs/*.yaml",
                     ["kubernetes"]= "kustomize/**/*.yaml",
+                    [dbt_lastest_schema_url .. "dbt_yml_files-latest.json"] = {
+                      "/**/*.yml",
+                      "!profiles.yml",
+                      "!dbt_project.yml",
+                      "!packages.yml",
+                      "!selectors.yml",
+                      "!profile_template.yml",
+                      "!package-lock.yml",
+                    },
+                    [dbt_lastest_schema_url .. "dbt_project-latest.json"] = { "dbt_project.yml" },
+                    [dbt_lastest_schema_url .. "selectors-latest.json"] = { "selectors.yml" },
+                    [dbt_lastest_schema_url .. "packages-latest.json"] = { "packages.yml" },
                 }
             }
         }

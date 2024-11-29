@@ -10,7 +10,7 @@ function M.setup()
       "terraformls",
       "tflint",
       "pyright",
-      "ruff_lsp", --python formatting
+      "ruff", --python formatting
       "jdtls",  --java
       "yamlls",
       "bashls",
