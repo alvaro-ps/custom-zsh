@@ -9,6 +9,7 @@ function M.setup()
   Yaml()
   Lua()
   Haskell()
+  Go()
 end
 
 function Lua()
@@ -64,7 +65,9 @@ end
 function Terraform()
   local lsp = require('lspconfig')
 
-  lsp.terraformls.setup{}
+  lsp.terraformls.setup{
+    root_dir = require("lspconfig.util").root_pattern(".terraform")
+  }
   lsp.tflint.setup{}
 
   vim.api.nvim_create_autocmd({"BufWritePre"}, {
@@ -169,6 +172,10 @@ end
 
 function Haskell()
   require('lspconfig').hls.setup{}
+end
+
+function Go()
+  require('lspconfig').gopls.setup{}
 end
 
 return M
