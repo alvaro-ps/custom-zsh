@@ -99,7 +99,7 @@ require("packer").startup(function(use)
     "nvim-treesitter/nvim-treesitter-context"
   })
   use { -- file and text finder
-    "CopilotC-Nvim/CopilotChat.nvim", branch = "canary",
+    "CopilotC-Nvim/CopilotChat.nvim", branch = "main",
     requires = {
       { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
       { "nvim-lua/plenary.nvim" }, -- for curl, 
