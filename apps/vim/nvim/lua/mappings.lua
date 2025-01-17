@@ -11,7 +11,7 @@ vim.g.mapleader = " "
 
 -- IDE
 local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
 --general
 map("i", "jj", "<esc>")
 map("v", "jj", "<esc>")
@@ -73,7 +73,7 @@ map("n", "fp", [[<cmd>lua require("telescope.builtin").live_grep{ glob_pattern="
 map("n", "fg", [[<cmd>lua require("telescope.builtin").git_commits()<CR>]])
 map("n", "fb", [[<cmd>Telescope buffers initial_mode=normal<CR>]])
 map("n", "fh", [[<cmd>Telescope command_history initial_mode=normal<CR>]])
-map("n", "fd", [[<cmd>Telescope diagnostics initial_mode=normal<CR>]])
+map("n", "<leader>E", [[<cmd>Telescope diagnostics initial_mode=normal<CR>]])
 -- Harpoon
 map("n", "<leader>a", [[<cmd>lua require("harpoon.mark").add_file()<CR>]])
 map("n", "<leader>l", [[<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]])
