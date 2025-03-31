@@ -15,6 +15,7 @@ function M.setup()
   cmp.setup({
     sources = {
       { name = "nvim_lsp" },
+      { name = "copilot" },
       { name = "vsnip" },
       { name = "treesitter"},
       { name = "buffer" },

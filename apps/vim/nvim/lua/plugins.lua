@@ -118,6 +118,29 @@ require("packer").startup(function(use)
       "stevanmilic/neotest-scala",
     }
   }
+  use({'ckipp01/nvim-jenkinsfile-linter', requires = { "nvim-lua/plenary.nvim" } })
+  use {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup()
+    end,
+  }
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  }
+  use({
+    "hrsh7th/vim-vsnip",
+    requires = {
+      "rafamadriz/friendly-snippets",
+    },
+  })
+
 end)
 
 -- global
@@ -138,6 +161,7 @@ require("setup/treesitter").setup()
 require("setup/tree").setup()
 require("setup/statusline").setup()
 require("setup/symbols_outline").setup()
-require("setup/copilot").setup()
+require("setup/copilot_config").setup()
 require("setup/motion").setup()
 require("setup/neotest").setup()
+require("setup/jenkins").setup()
