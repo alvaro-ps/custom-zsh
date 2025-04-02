@@ -1,10 +1,8 @@
 local M = {}
 
 function M.setup()
-  local opt = vim.opt
-
-  opt.foldmethod = "expr"
-  opt.foldexpr = "nvim_treesitter#foldexpr()"
+  vim.wo.foldmethod = 'expr'
+  vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
   require('nvim-treesitter.configs').setup {
     -- A list of parser names, or "all"
