@@ -61,7 +61,8 @@ alt - q: yabai -m window --close
 
 # Apps
 #alt - return : open /Applications/iTerm.app --new
-alt - return : osascript ~/.alvaro/apps/yabai/new_window_iterm.scpt
+#alt - return : osascript ~/.alvaro/apps/yabai/new_window_iterm.scpt
+alt - return : alacritty msg create-window
 
 # focus window that was previously focused
 #alt - h : yabai -m window --focus recent
