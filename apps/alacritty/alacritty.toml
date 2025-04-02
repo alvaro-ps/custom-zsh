@@ -17,3 +17,6 @@ blur = false
 [font]
 size = 14
 normal = { family = "Hack Nerd font Mono", style = "Regular" }
+
+[selection]
+save_to_clipboard = true
