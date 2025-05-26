@@ -11,7 +11,7 @@ padding.y = 5
 
 decorations = "Buttonless"
 
-opacity = 0.85
+opacity = 0.9
 blur = false
 
 [font]
@@ -20,3 +20,7 @@ normal = { family = "Hack Nerd font Mono", style = "Regular" }
 
 [selection]
 save_to_clipboard = true
+
+[cursor]
+style.blinking = "Always"
+blink_interval = 500
