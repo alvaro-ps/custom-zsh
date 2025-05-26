@@ -65,3 +65,5 @@ function local_geo_json_tools() {
 }
 
 alias local_airflow="SQLALCHEMY_SILENCE_UBER_WARNING=1 airflow variables import dev/variables.json && airflow standalone"
+export VAULT_ADDR=https://vault.opnsgnl.net:8200
+alias vaultlogin="vault login -method=oidc -path=okta"
