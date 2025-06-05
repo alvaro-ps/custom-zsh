@@ -1,0 +1,3 @@
+# Copy this file to api_keys.sh and run any sensitive code you may not want to publish,
+# such as API keys or secrets.
+OPENAI_API_KEY=your-api-key
