@@ -140,6 +140,22 @@ require("packer").startup(function(use)
       "rafamadriz/friendly-snippets",
     },
   })
+  use {
+    'yetone/avante.nvim',
+    branch = 'main',
+    run = 'make',
+    requires = {
+      'nvim-treesitter/nvim-treesitter',
+      'stevearc/dressing.nvim',
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+      'MeanderingProgrammer/render-markdown.nvim',
+      'hrsh7th/nvim-cmp',
+      'nvim-tree/nvim-web-devicons',
+      'HakonHarnes/img-clip.nvim',
+      'zbirenbaum/copilot.lua',
+    },
+  }
 
 end)
 
@@ -165,3 +181,4 @@ require("setup/copilot_config").setup()
 require("setup/motion").setup()
 require("setup/neotest").setup()
 require("setup/jenkins").setup()
+require("setup/ai").setup()
