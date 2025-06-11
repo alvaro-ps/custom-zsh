@@ -2,9 +2,11 @@
 OPENSIGNAL="${HOME}/opensignal"
 DAP="${OPENSIGNAL}/data-aggregation-pipeline"
 SCALA_UTILS="${OPENSIGNAL}/data-scala-utils"
+DATA_AIRFLOW="${OPENSIGNAL}/data-airflow"
 alias opensignal='cd "$OPENSIGNAL"'
 alias utils='cd "$SCALA_UTILS"'
 alias dap='cd "$DAP"'
+alias flow='cd "$DATA_AIRFLOW"'
 
 ## BLAS/Lapack libraries for numpy
 #openblas is keg-only, which means it was not symlinked into /opt/homebrew,
