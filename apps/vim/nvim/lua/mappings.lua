@@ -1,16 +1,30 @@
 local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+    local options = { noremap = true }
+    if opts then
+        options = vim.tbl_extend("force", options, opts)
+    end
+    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+
+
+vim.g.prev_width = vim.fn.winwidth(0)
+function ToggleVerticalSplit()
+    local current_width = vim.fn.winwidth(0)
+    local total_columns = vim.o.columns
+
+    if current_width == math.floor(total_columns / 2) then
+        vim.cmd('vertical resize ' .. vim.g.prev_width)
+    else
+        vim.g.prev_width = current_width
+        vim.cmd('vertical resize ' .. math.floor(total_columns / 2))
+    end
 end
 
 vim.g.mapleader = " "
 
 
 -- IDE
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
 --general
 map("i", "jj", "<esc>")
@@ -25,7 +39,8 @@ map("v", "<leader>w", "<c-w>")
 
 map("n", "<c-h>", "<cmd>vertical resize +10<CR>")
 map("n", "<c-l>", "<cmd>vertical resize -10<CR>")
---map("n", "<C-z>", "<cmd>:bdelete<CR>")  --try to avoid using it!
+
+map("n", "<leader>tt", ":lua ToggleVerticalSplit()<CR>", opts)
 
 -- Folds
 map('n', ',', 'za', opts)
