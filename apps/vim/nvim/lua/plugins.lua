@@ -156,6 +156,13 @@ require("packer").startup(function(use)
       'zbirenbaum/copilot.lua',
     },
   }
+  use {
+    "ravitemer/mcphub.nvim",
+    requires = {
+        { "nvim-lua/plenary.nvim" },
+    },
+    run = "npm install -g mcp-hub@latest",  -- Installs `mcp-hub` node binary globally
+  }
 
 end)
 
