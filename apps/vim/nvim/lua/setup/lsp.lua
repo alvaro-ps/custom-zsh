@@ -13,7 +13,7 @@ function M.setup()
 end
 
 function Lua()
-  require('lspconfig').lua_ls.setup({
+  vim.lsp.enable('lua_ls', {
     settings = {
       Lua = {
         diagnostics = {
@@ -27,34 +27,35 @@ function Lua()
 end
 
 function Rust()
-  require('lspconfig').rust_analyzer.setup{}
+  vim.lsp.enable('rust_analyzer', {})
 end
 
 function Python()
-  require('lspconfig').pyright.setup {}
+  vim.lsp.enable('pyright', {})
   -- Faster startup (specially if using venvs)
   vim.g.python3_host_prog = "python"
   vim.g.python_host_prog = "python"
   -- Formatting with Ruff
-  require('lspconfig').ruff.setup{}
+  vim.lsp.enable('ruff', {})
 
   -- Debug settings if you're using nvim-dap
   local dap = require("dap")
   local dap_python = require("dap-python").setup("python")
 
   -- Cucumber (behave)
-  require('lspconfig').cucumber_language_server.setup {
-    settings = {
-      cucumber = {
-        glue = { "features/**/*steps.py" }
+  vim.lsp.enable('cucumber_language_server', {
+      settings = {
+        cucumber = {
+          glue = { "features/**/*steps.py" }
+        }
       }
     }
-  }
+  )
 
 end
 
 function Java()
-  require('lspconfig').jdtls.setup{}
+  vim.lsp.enable('jdtls', {})
   local config = {
     cmd = {os.getenv("HOME") .. '/.local/share/nvim/mason/bin/jdtls'},
     root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
@@ -63,12 +64,12 @@ function Java()
 end
 
 function Terraform()
-  local lsp = require('lspconfig')
 
-  lsp.terraformls.setup{
-    root_dir = require("lspconfig.util").root_pattern(".terraform")
-  }
-  lsp.tflint.setup{}
+  vim.lsp.enable('terraformls', {
+      root_dir = require("lspconfig.util").root_pattern(".terraform")
+    }
+  )
+  vim.lsp.enable('tflint', {})
 
   vim.api.nvim_create_autocmd({"BufWritePre"}, {
     pattern = {"*.tf", "*.tfvars"},
@@ -145,7 +146,7 @@ end
 
 function Yaml()
     local dbt_lastest_schema_url = "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/latest/"
-    require('lspconfig').yamlls.setup{
+    vim.lsp.enable('yamlls', {
         settings = {
             yaml = {
                 schemas = {
@@ -167,15 +168,24 @@ function Yaml()
                 }
             }
         }
-    }
+    })
+    vim.lsp.enable('helm_ls', {
+      settings = {
+        ['helm-ls'] = {
+          yamlls = {
+            path = "yaml-language-server",
+          }
+        }
+      },
+    })
 end
 
 function Haskell()
-  require('lspconfig').hls.setup{}
+  vim.lsp.enable('hls', {})
 end
 
 function Go()
-  require('lspconfig').gopls.setup{}
+  vim.lsp.enable('gopls', {})
 end
 
 return M
