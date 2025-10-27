@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-  require('leap').create_default_mappings()
+  vim.keymap.set({'n', 'x', 'o', 'v'}, 's', '<Plug>(leap)')
 end
 
 return M
