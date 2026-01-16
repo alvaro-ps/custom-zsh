@@ -8,7 +8,6 @@ function M.setup()
   Terraform()
   Yaml()
   Lua()
-  Haskell()
   Go()
 end
 
