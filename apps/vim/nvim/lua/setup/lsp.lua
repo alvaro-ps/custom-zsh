@@ -174,14 +174,13 @@ function Yaml()
         ['helm-ls'] = {
           yamlls = {
             path = "yaml-language-server",
+          },
+          valuesFiles = {
+            additionalValuesFilesGlobPattern = "*values.yaml",
           }
         }
       },
     })
-end
-
-function Haskell()
-  vim.lsp.enable('hls', {})
 end
 
 function Go()

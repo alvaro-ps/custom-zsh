@@ -16,7 +16,6 @@ function M.setup()
       "yamlls",
       "bashls",
       "rust_analyzer",
-      "hls", --haskel
       "helm_ls",
     },
   }
