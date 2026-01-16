@@ -118,7 +118,6 @@ require("packer").startup(function(use)
       "stevanmilic/neotest-scala",
     }
   }
-  use({'ckipp01/nvim-jenkinsfile-linter', requires = { "nvim-lua/plenary.nvim" } })
   use {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -187,5 +186,4 @@ require("setup/symbols_outline").setup()
 require("setup/copilot_config").setup()
 require("setup/motion").setup()
 require("setup/neotest").setup()
-require("setup/jenkins").setup()
 require("setup/ai").setup()
