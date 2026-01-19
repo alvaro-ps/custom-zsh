@@ -36,6 +36,8 @@ map("n", "W", "<c-w>")
 map("v", "W", "<c-w>")
 map("n", "<leader>w", "<c-w>")
 map("v", "<leader>w", "<c-w>")
+map("t", "<leader>w", "<c-w>")
+map("t", "<esc>", "<c-\\><c-n>")
 
 map("n", "<c-h>", "<cmd>vertical resize +10<CR>")
 map("n", "<c-l>", "<cmd>vertical resize -10<CR>")
@@ -97,6 +99,12 @@ map("n", "<leader>2", [[<cmd>lua require("harpoon.ui").nav_file(2)<CR>]])
 map("n", "<leader>3", [[<cmd>lua require("harpoon.ui").nav_file(3)<CR>]])
 map("n", "<leader><tab>", [[<cmd>lua require("harpoon.ui").nav_next()<CR>]])
 map("n", "<leader><shift><tab>", [[<cmd>lua require("harpoon.ui").nav_prev()<CR>]])
+-- Opencode
+vim.keymap.set({ "n", "x" }, "<leader>oa", function() require("opencode").ask("@this: ", { submit = true }) end, { desc = "Ask opencode…" })
+vim.keymap.set({ "n", "x" }, "<leader>oe", function() require("opencode").select() end,                          { desc = "Execute opencode action…" })
+vim.keymap.set({ "n", "t" }, "<leader>oo", function() require("opencode").toggle() end,                          { desc = "Toggle opencode" })
+vim.keymap.set({ "n", "x" }, "<leader>og",  function() return require("opencode").operator("@this ") end,        { desc = "Add range to opencode", expr = true })
+vim.keymap.set("n",          "<leader>ogoo", function() return require("opencode").operator("@this ") .. "_" end, { desc = "Add line to opencode", expr = true })
 
 
 -- Tree

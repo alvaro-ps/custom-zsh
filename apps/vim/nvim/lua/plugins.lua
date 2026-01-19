@@ -162,6 +162,12 @@ require("packer").startup(function(use)
     },
     run = "npm install -g mcp-hub@latest",  -- Installs `mcp-hub` node binary globally
   }
+  use {
+    "NickvanDyke/opencode.nvim",
+    requires = {
+      "folke/snacks.nvim",
+    },
+  }
 
 end)
 
