@@ -37,13 +37,6 @@ require("packer").startup(function(use)
     "scalameta/nvim-metals",
     requires = {
       "nvim-lua/plenary.nvim",
-      "mfussenegger/nvim-dap",
-    },
-  })
-  use({ -- python
-    "mfussenegger/nvim-dap-python",
-    requires = {
-      "mfussenegger/nvim-dap",
     },
   })
   use({"mfussenegger/nvim-jdtls"})  --java
@@ -66,12 +59,6 @@ require("packer").startup(function(use)
     "romgrk/barbar.nvim",
     requires = "kyazdani42/nvim-web-devicons"
   })
-  use({ -- Debugger UI
-    "rcarriga/nvim-dap-ui",
-    requires = {
-      "mfussenegger/nvim-dap",
-      "nvim-neotest/nvim-nio",
-  }})
   use({"nvim-treesitter/nvim-treesitter"})
   use({ -- File Tree
     "nvim-tree/nvim-tree.lua",
@@ -184,7 +171,6 @@ require("setup/lsp").setup()
 require("setup/telescope").setup()
 require("setup/colorscheme").setup()
 require("setup/bufferbar").setup()
-require("setup/debugger").setup()
 require("setup/treesitter").setup()
 require("setup/tree").setup()
 require("setup/statusline").setup()

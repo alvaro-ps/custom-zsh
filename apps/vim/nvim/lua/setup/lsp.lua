@@ -37,10 +37,6 @@ function Python()
   -- Formatting with Ruff
   vim.lsp.enable('ruff', {})
 
-  -- Debug settings if you're using nvim-dap
-  local dap = require("dap")
-  local dap_python = require("dap-python").setup("python")
-
   -- Cucumber (behave)
   vim.lsp.enable('cucumber_language_server', {
       settings = {

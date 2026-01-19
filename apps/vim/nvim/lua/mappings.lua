@@ -76,13 +76,6 @@ map("n", "<leader><leader>t", [[<cmd>lua require("neotest").run.run(vim.fn.expan
 map("n", "<leader>tw", [[<cmd>lua require("neotest").watch.toggle(vim.fn.expand("%"))<CR>]])
 map("n", "<leader>to", [[<cmd>Neotest output<CR>]])
 
--- Debugging
-map("n", "<leader>p", [[<cmd>lua require("dap").toggle_breakpoint()<CR>]])
-map("n", "<leader>n", [[<cmd>lua require("dap").step_over()<CR>]])
-map("n", "<leader>i", [[<cmd>lua require("dap").step_into()<CR>]])
-map("n", "<leader>C", [[<cmd>lua require("dap").continue()<CR>]])
-map("n", "<leader>g", [[<cmd>lua require("dapui").toggle()<CR>]])
-
 -- finding stuff: Telescope
 map("n", "ff", [[<cmd>lua require("setup.telescope").smart_find_files()<CR>]])
 map("n", "ft", [[<cmd>lua require("telescope.builtin").live_grep()<CR>]])
