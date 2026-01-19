@@ -73,9 +73,6 @@ require("packer").startup(function(use)
   use({ -- goto-preview
     "rmagatti/goto-preview"
   })
-  use({  -- Symbols outline
-    "simrat39/symbols-outline.nvim"
-  })
   use({ -- file finding
     "ThePrimeagen/harpoon",
     requires = {
@@ -93,18 +90,6 @@ require("packer").startup(function(use)
     }
   }
   use({"ggandor/leap.nvim"})
-  use {
-    "nvim-neotest/neotest",
-    requires = {
-      "nvim-neotest/nvim-nio",
-      "nvim-lua/plenary.nvim",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      -- languages
-      "nvim-neotest/neotest-python",
-      "stevanmilic/neotest-scala",
-    }
-  }
   use {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -174,8 +159,6 @@ require("setup/bufferbar").setup()
 require("setup/treesitter").setup()
 require("setup/tree").setup()
 require("setup/statusline").setup()
-require("setup/symbols_outline").setup()
 require("setup/copilot_config").setup()
 require("setup/motion").setup()
-require("setup/neotest").setup()
 require("setup/ai").setup()

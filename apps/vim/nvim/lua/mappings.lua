@@ -61,7 +61,6 @@ map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({async=true})<CR>")
 map("n", "<leader>v", [[<cmd>lua require("goto-preview").goto_preview_definition()<CR>]])
 map("n", "<leader>m", [[<cmd>Mason<CR>]])
 map("n", "<leader>M", [[<cmd>Telescope metals commands initial_mode=normal<CR>]])
-map("n", "<leader>k", "<cmd>:SymbolsOutline<CR>")
 -- Git
 map("n", "<leader>B", [[<cmd>Git blame<CR>]])
 
@@ -70,11 +69,6 @@ map("n", "<leader>c", [[<cmd>CopilotChatToggle<CR>]])
 map("v", "<leader>r", [[<cmd>CopilotChatReview<CR>]])
 map("v", "<leader>e", [[<cmd>CopilotChatExplain<CR>]])
 map("v", "<leader>o", [[<cmd>CopilotChatOptimize<CR>]])
--- neotest
-map("n", "<leader>t", [[<cmd>lua require("neotest").run.run()<CR>]])
-map("n", "<leader><leader>t", [[<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<CR>]])
-map("n", "<leader>tw", [[<cmd>lua require("neotest").watch.toggle(vim.fn.expand("%"))<CR>]])
-map("n", "<leader>to", [[<cmd>Neotest output<CR>]])
 
 -- finding stuff: Telescope
 map("n", "ff", [[<cmd>lua require("setup.telescope").smart_find_files()<CR>]])
