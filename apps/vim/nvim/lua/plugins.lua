@@ -82,29 +82,7 @@ require("packer").startup(function(use)
   use({  -- leave context top screen (class, function, loop, ...)
     "nvim-treesitter/nvim-treesitter-context"
   })
-  use { -- file and text finder
-    "CopilotC-Nvim/CopilotChat.nvim", branch = "main",
-    requires = {
-      { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-      { "nvim-lua/plenary.nvim" }, -- for curl, 
-    }
-  }
   use({"ggandor/leap.nvim"})
-  use {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup()
-    end,
-  }
-  use {
-    "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua" },
-    config = function()
-      require("copilot_cmp").setup()
-    end,
-  }
   use({
     "hrsh7th/vim-vsnip",
     requires = {
@@ -159,6 +137,5 @@ require("setup/bufferbar").setup()
 require("setup/treesitter").setup()
 require("setup/tree").setup()
 require("setup/statusline").setup()
-require("setup/copilot_config").setup()
 require("setup/motion").setup()
 require("setup/ai").setup()

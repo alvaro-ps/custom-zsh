@@ -64,12 +64,6 @@ map("n", "<leader>M", [[<cmd>Telescope metals commands initial_mode=normal<CR>]]
 -- Git
 map("n", "<leader>B", [[<cmd>Git blame<CR>]])
 
--- Copilot
-map("n", "<leader>c", [[<cmd>CopilotChatToggle<CR>]])
-map("v", "<leader>r", [[<cmd>CopilotChatReview<CR>]])
-map("v", "<leader>e", [[<cmd>CopilotChatExplain<CR>]])
-map("v", "<leader>o", [[<cmd>CopilotChatOptimize<CR>]])
-
 -- finding stuff: Telescope
 map("n", "ff", [[<cmd>lua require("setup.telescope").smart_find_files()<CR>]])
 map("n", "ft", [[<cmd>lua require("telescope.builtin").live_grep()<CR>]])
