@@ -118,7 +118,10 @@ function Yaml()
         settings = {
             yaml = {
                 schemas = {
-                    ["client_configs/schema/schema.json"] = "client_configs/*.yaml",
+                    ["client_configs/schema/schema.json"] = {
+                      "client_configs/*.yaml",
+                      "tests/resources/client_configs/*.yaml",
+                    },
                     ["testing/validation_tests/yaml_schema.json"] = "customer_configs/*.yaml",
                     ["kubernetes"]= "kustomize/**/*.yaml",
                     [dbt_lastest_schema_url .. "dbt_yml_files-latest.json"] = {

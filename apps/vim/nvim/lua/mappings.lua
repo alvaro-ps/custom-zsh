@@ -53,7 +53,7 @@ map('n', '>', 'zR', opts)
 -- Plugins
 map("n", "<leader>d", "<cmd>lua vim.lsp.buf.definition()<CR>")
 map("n", "<leader>A", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
+map("n", "<leader>k", "<cmd>lua vim.lsp.buf.hover()<CR>")
 map("n", "<leader>h", [[<cmd>lua vim.lsp.buf.signature_help()<CR>]])
 map("n", "<leader>r", "<cmd>lua vim.lsp.buf.references()<CR>")
 map("n", "<leader>R", "<cmd>lua vim.lsp.buf.rename()<CR>")
@@ -86,7 +86,8 @@ vim.keymap.set({ "n", "x" }, "<leader>oe", function() require("opencode").select
 vim.keymap.set({ "n", "t" }, "<leader>oo", function() require("opencode").toggle() end,                          { desc = "Toggle opencode" })
 vim.keymap.set({ "n", "x" }, "<leader>og",  function() return require("opencode").operator("@this ") end,        { desc = "Add range to opencode", expr = true })
 vim.keymap.set("n",          "<leader>ogoo", function() return require("opencode").operator("@this ") .. "_" end, { desc = "Add line to opencode", expr = true })
-
+vim.keymap.set("n", "K", function() require("opencode").command("session.half.page.up") end,   { desc = "Scroll opencode up" })
+vim.keymap.set("n", "J", function() require("opencode").command("session.half.page.down") end, { desc = "Scroll opencode down" })
 
 -- Tree
 map("n", "<leader>n", [[<cmd>lua require("nvim-tree.api").tree.toggle()<CR>]])

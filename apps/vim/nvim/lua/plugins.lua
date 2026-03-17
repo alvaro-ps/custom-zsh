@@ -82,7 +82,7 @@ require("packer").startup(function(use)
   use({  -- leave context top screen (class, function, loop, ...)
     "nvim-treesitter/nvim-treesitter-context"
   })
-  use({"ggandor/leap.nvim"})
+  use({"https://codeberg.org/andyg/leap.nvim"})
   use({
     "hrsh7th/vim-vsnip",
     requires = {

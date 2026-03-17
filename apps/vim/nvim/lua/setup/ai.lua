@@ -11,7 +11,13 @@ function M.setup()
   -- Require a OPENAI_API_KEY
   require('avante').setup({
     --mode = 'legacy', -- for now as there is a bug, https://github.com/yetone/avante.nvim/issues/1939
-    provider = 'openai',
+    provider = 'copilot',
+    providers = {
+      copilot = {
+        model = "claude-opus-4.6"
+      }
+    },
+
     parse_api_key = function()
       local key = vim.env.OPENAI_API_KEY
       if not key then
