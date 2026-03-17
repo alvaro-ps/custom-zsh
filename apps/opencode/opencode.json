@@ -18,5 +18,5 @@
         "Authorization": "Bearer {env:GITHUB_API_KEY}"
       }
     }
-  }
+  },
 }

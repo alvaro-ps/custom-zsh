@@ -7,5 +7,6 @@ basepath=$(cd $(dirname "$0") && pwd)
 
 ln -f "${basepath}/AGENTS.md" ~/.config/opencode/AGENTS.md
 ln -fs "${basepath}/skills" ~/.config/opencode
+ln -fs "${basepath}/agents" ~/.config/opencode
 
 export OPENCODE_CONFIG="${basepath}/opencode.json"
