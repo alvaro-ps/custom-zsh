@@ -10,3 +10,4 @@ ln -fs "${basepath}/skills" ~/.config/opencode
 ln -fs "${basepath}/agents" ~/.config/opencode
 
 export OPENCODE_CONFIG="${basepath}/opencode.json"
+export OPENCODE_TUI_CONFIG="${basepath}/tui.json"
