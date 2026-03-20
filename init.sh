@@ -6,3 +6,4 @@ bindkey "\e[5~" 'history-search-backward'
 bindkey "\e[6~" 'history-search-forward'
 
 source "${basepath}/api_keys.sh"
+export EDITOR=nvim
