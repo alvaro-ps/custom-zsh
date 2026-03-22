@@ -1,6 +1,7 @@
 # Code
 
-Whenever I mention a repository of code, you can find it under `~/opensignal/`
+Whenever I mention a repository of code, you can find it under `~/opensignal/`. If not,
+you can search for it on Github, see the MCP Servers section for more details.
 
 # MCP Servers
 

@@ -278,7 +278,7 @@ Use this sequence when asked how a field/table/metric is produced:
 2. Locate transformation code
 - Follow entrypoint scripts/classes into:
   - `data-aggregation-pipeline` (Spark augmentation/LLDHN/metrics)
-  - `onx-data-pipeline` (Beam/Dataflow OneSource/ONX jobs)
+  - `onx-data-pipeline` (Beam/Dataflow OneSource/ONX jobs, also SQL in BigQuery jobs)
   - `dbt-metrics-models` (dbt SQL DAGs for intermediate and product metrics)
   - `onx-data-delivery` (customer raw-data view/export generation)
   - `onx-insights` (aggregated product DAG generation and dbt orchestration)
