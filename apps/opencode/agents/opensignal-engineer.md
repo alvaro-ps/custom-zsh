@@ -5,7 +5,7 @@ mode: primary
 temperature: 0.5
 tools:
   write: false
-  edit: false
+  edit: true
   bash: true
 ---
 
@@ -94,11 +94,9 @@ Rely on the `data-engineer` subagent when working in this area
 1. Airflow orchestration for early stages and metric DAGs
 - Repository: https://github.com/opensignal/data-airflow
 - Primary role:
-  - Orchestrates pre-augmentation and augmentation stage jobs.
   - Orchestrates LLDHN generation and metric pipelines for mobile products.
   - Hosts operational DAG dependencies/sensors around OneSource status and related side pipelines.
 - High-value paths:
-  - `airflow/dags/augmentation/`
   - `airflow/dags/lldhn/`
   - `airflow/dags/all_metrics_daily.py`
   - `airflow/dags/all_metrics_weekly.py`
@@ -107,10 +105,12 @@ Rely on the `data-engineer` subagent when working in this area
 2. Dataflow/Beam orchestration for OneSource/ONX processing and mappings
 - Repository: https://github.com/opensignal/onx-data-pipeline
 - Primary role:
+  - Owns pre-augmentation and augmentation stage jobs.
   - Owns augmented -> OneSource and ONX processing jobs.
   - Owns mapping-table automation and selector-driven row/field filtering behavior.
   - Owns downstream import/processing modules and associated update statements/query logic.
 - High-value paths:
+  - `dags/augmentation/`
   - `onesource/src/main/`
   - `onx/src/main/`
   - `onesource/src/main/resources/com/tutelatechnologies/data/onesource/selectors/`
@@ -187,6 +187,18 @@ Rely on the `data-engineer` subagent when working in this area
   - `nxg_dags_fbb_dags/broadband_dbt_metrics_weekly/config.yaml`
   - `nxg_dags_fbb_common/operators/dbt_task.py`
   - `nxg_dags_fbb_common/utils.py`
+
+## Common code repos
+
+There is some functionality that is reused among some repositories. This is
+mainly Airflow operators, and it is packaged and published to our custom python repository
+on GCP (GCR).
+
+- Repository: https://github.com/opensignal/airflow-plugins
+- Primary role:
+  - Common Airflow code, reused in some of the Airflow repos mentioned.
+- High-value paths:
+  - `src/airflow_common`
 
 ## Infrastructure repos
 
