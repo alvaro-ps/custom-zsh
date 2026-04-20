@@ -17,6 +17,14 @@
       "headers": {
         "Authorization": "Bearer {env:GITHUB_API_KEY}"
       }
+    },
+    "composer": {
+        "type": "remote",
+        "url": "https://composer.us-west2.rep.googleapis.com/mcp",
+        "enabled": true,
+        "headers": {
+          "Authorization": "Bearer {env:GOOGLE_TOKEN}"
+        }
+      }
     }
-  },
 }
