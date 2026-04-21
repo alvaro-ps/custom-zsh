@@ -72,9 +72,8 @@ alias vaultlogin="vault login -method=oidc -path=okta"
 
 dataproc_logs() {
   local batch_id="$1"
-  local output_file="$2"
-  local project="${3:-os-pipeline-processing}"
-  local region="${4:-us-central1}"
+  local project="${2:-os-pipeline-processing}"
+  local region="${3:-us-central1}"
   if [[ -z "$batch_id" ]]; then
     echo "Usage: dataproc_logs <batch_id> [project] [region]"
     echo ""
