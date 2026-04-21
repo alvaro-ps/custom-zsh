@@ -59,7 +59,11 @@ require("packer").startup(function(use)
     "romgrk/barbar.nvim",
     requires = "kyazdani42/nvim-web-devicons"
   })
-  use({"nvim-treesitter/nvim-treesitter"})
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    build = ":TSUpdate"
+  })
   use({ -- File Tree
     "nvim-tree/nvim-tree.lua",
     requires = {
