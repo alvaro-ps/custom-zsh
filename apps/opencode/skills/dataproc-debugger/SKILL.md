@@ -18,6 +18,13 @@ Whenever you are asked to debug a dataproc batch
 - The staging project is `os-stag-pipeline-processing`
 - Unless specified, the project will be production
 - Unless specified, the region will be `us-central1`
+- Always fetch the job description and its logs to get context
+- If the issue is related to out of memory error, fetch failed, or anything related to job sizing, do fetch information about the data size.
+    * Try and get if from the event logs in the Spark History Server
+    * You can also check the available scripts.
+- When providing cluster sizing changes, make sure to provide sensible numbers based on facts, no guessing.
+    * This could mean figuring out the airflow dag/task the batch belongs to and find successful runs that act as baseline
+    * Take into account dataproc serverless limitations in terms of compute
 
 ## Available scripts
 
