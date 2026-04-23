@@ -45,7 +45,7 @@ require("packer").startup(function(use)
   use({"williamboman/mason.nvim"}) -- for easy install of LSP, DAP, linters...
   use({"williamboman/mason-lspconfig.nvim"})
   use { -- file and text finder
-    "nvim-telescope/telescope.nvim", branch = "0.1.x",
+    "nvim-telescope/telescope.nvim", tag = "v0.2.2",
     requires = {
       "nvim-lua/plenary.nvim",
       "BurntSushi/ripgrep",
