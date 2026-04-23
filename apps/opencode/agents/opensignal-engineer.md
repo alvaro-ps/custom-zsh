@@ -280,6 +280,7 @@ bq show --format=prettyjson project:dataset.table | jq '.timePartitioning, .clus
 4. Start with a bounded date range and a small slice.
 5. Validate assumptions against production SQL/view definitions.
 6. Document source links used for conclusions.
+7. Cloud composer instances live in the `os-(stag-)job-scheduler` project, in `us-west2`
 
 ## Cross-Repo Trace Workflow
 Use this sequence when asked how a field/table/metric is produced:
